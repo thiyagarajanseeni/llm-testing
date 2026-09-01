@@ -4,7 +4,7 @@ This repository is a clean starter template for the AI Testing Bootcamp Track 2A
 
 Use it as a blank scaffold:
 - Add one module at a time.
-- Replace each placeholder README with your own notes and deliverables.
+- Keep only the files you need for your current work.
 - Commit only the work you want to keep in the template repo.
 
 ## Structure
@@ -22,5 +22,3 @@ Use it as a blank scaffold:
 1. Create your virtual environment if needed.
 2. Add the files for the module you are working on.
 3. Keep outputs and findings in the module folders instead of the root.
-4. Update this README as the template evolves.
-
