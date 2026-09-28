@@ -1,0 +1,85 @@
+
+
+description: "Advanced assertion patterns — Deterministic"
+
+# providers:
+
+providers:
+          - id: openai:gpt-4o-mini
+            config:
+              temperature: 0.3 # Lower temp = more consistent outputs for testing
+              max_tokens: 400   # Limit the output length for testing consistency / Budget control
+  
+
+# Optionally add a second provider for comparison (Hour 2)
+# - id: anthropic:claude-haiku-4-5
+
+prompts:
+-   file://system_prompt_v1.txt
+
+
+  # You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.
+  # Answer the user's question clearly and professionally.
+  # Never provide specific financial advice. Always recommend consulting a Financial Advisor.
+
+  # User: {{question}}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TEST DATA — can also reference data/test_data.csv via:
+# tests: file://data/test_data.csv
+# ─────────────────────────────────────────────────────────────────────────────
+#     # ── LAYER 1: Deterministic — ALWAYS run first, zero cost ─────────────
+
+tests:
+  # ── Test Case 1: Financial Guidance using starts-with ───────────────────────────────────────
+    - vars:
+        question: "Can I access my superannuation before retirement?"
+
+      assert:
+      - type: starts-with
+        value: "Superannuation is designed" 
+
+  # # ── Test Case 2: Superannuation Contribution Percentage by Employer using contains ───────────────────────────────────────
+    - vars:
+        question: "What percentage of my salary does my employer contribute to my superannuation?"
+
+      assert:
+      - type: contains
+        value: "11%"
+
+  # ── Test Case 3: Access to Superannuation during Financial Hardship using not-contains ───────────────────────────────────────
+    - vars:
+        question: "Can I access my superannuation during financial hardship?"
+
+      assert:
+      - type: not-contains
+        value: "guarantee"
+
+  # ── Test Case 4: Access to Superannuation before Retirement using Regex ───────────────────────────────────────
+    - vars:
+        question: "In what circumstances can I access my superannuation early?"
+
+      assert:
+      - type: regex
+        value: "Financial Hardship | Compassionate Grounds | Medical Condition"
+
+        # ── Test Case 5: Superannuation contribution by employer for Men and Women using equals ───────────────────────────────────────
+    - vars:
+        question: "Is there any difference in how the employer contributes to superannuation for regional employees?"
+
+      assert:
+      - type: equals
+        value: "There is no difference based on regional employees."    
+
+      # ── Test Case 6: Access to Superannuation early using is-json ───────────────────────────────────────
+    - vars:
+        question: "Can I access my superannuation before retirement?"
+
+      assert:
+      - type: is-json
+        #value: "There is no difference based on regional employees."    
+
+
+
+# ── Output ─────────────────────────────────────────────────────
+outputPath: reports/module-7b-promptfoo.json
