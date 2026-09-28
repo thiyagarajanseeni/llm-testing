@@ -1,0 +1,1263 @@
+{
+  "evalId": "eval-xOp-2026-09-28T12:16:26",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-09-28T12:16:26.396Z",
+    "prompts": [
+      {
+        "raw": "You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: {{question}}\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+        "label": "module-7b\\01-assertions\\prompts\\system_prompt_v1.txt: You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: {{question}}\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+        "id": "b26b7031b53804e00e51e8387301d19133d622d6fb474cd549acaa91c917dabe",
+        "provider": "openai:gpt-4o-mini",
+        "metrics": {
+          "score": 4,
+          "testPassCount": 4,
+          "testFailCount": 1,
+          "testErrorCount": 0,
+          "assertPassCount": 4,
+          "assertFailCount": 1,
+          "totalLatencyMs": 11379,
+          "tokenUsage": {
+            "prompt": 648,
+            "completion": 634,
+            "cached": 0,
+            "total": 1282,
+            "numRequests": 5,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 846,
+              "prompt": 695,
+              "completion": 151,
+              "cached": 0,
+              "numRequests": 2,
+              "completionDetails": {
+                "reasoning": 37,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "namedScoreWeights": {},
+          "cost": 0.0004776
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0.0000774,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "contains",
+                "value": "11%"
+              }
+            }
+          ]
+        },
+        "id": "d84ab131-70d4-42d7-8cb8-35290eed33b3",
+        "latencyMs": 2443,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: What percentage of my salary does my employer contribute to my superannuation?\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "label": "module-7b\\01-assertions\\prompts\\system_prompt_v1.txt: You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: {{question}}\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "config": {}
+        },
+        "promptId": "b26b7031b53804e00e51e8387301d19133d622d6fb474cd549acaa91c917dabe",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": ""
+        },
+        "response": {
+          "output": "In Australia, the standard employer contribution to your superannuation is currently set at 11% of your ordinary time earnings. This is known as the Superannuation Guarantee (SG). However, it's important to note that this percentage may change over time, so it's a good idea to stay informed about any updates to superannuation laws.\n\nIf you have specific questions about your superannuation or how it applies to your situation, I recommend consulting a Financial Advisor for tailored advice.",
+          "tokenUsage": {
+            "prompt": 132,
+            "completion": 96,
+            "cached": 0,
+            "total": 228,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 2443,
+          "finishReason": "stop",
+          "cost": 0.0000774,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Mon, 28 Sep 2026 12:16:28 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "1297",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "What percentage of my salary does my employer contribute to my superannuation?"
+          },
+          "assert": [
+            {
+              "type": "contains",
+              "value": "11%"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "tokenUsage": {
+          "prompt": 132,
+          "completion": 96,
+          "cached": 0,
+          "total": 228,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "question": "What percentage of my salary does my employer contribute to my superannuation?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Mon, 28 Sep 2026 12:16:28 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "1297",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0.0000984,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "not-contains",
+                "value": "guarantee"
+              }
+            }
+          ]
+        },
+        "id": "e2d5bbec-ee50-4c3e-a85b-6825c5141ff1",
+        "latencyMs": 2534,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: Can I access my superannuation during financial hardship?\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "label": "module-7b\\01-assertions\\prompts\\system_prompt_v1.txt: You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: {{question}}\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "config": {}
+        },
+        "promptId": "b26b7031b53804e00e51e8387301d19133d622d6fb474cd549acaa91c917dabe",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": ""
+        },
+        "response": {
+          "output": "You may be able to access your superannuation early if you meet certain conditions of release, including financial hardship. The conditions under which you can access your superannuation early typically include:\n\n1. **Financial Hardship**: If you are unable to meet your living expenses.\n2. **Compassionate Grounds**: Such as needing funds for medical treatment or to prevent foreclosure on your home.\n3. **Medical Condition**: If you have a terminal illness or other serious medical conditions.\n\nIt's important to note that specific eligibility criteria and processes apply, so I recommend consulting a Financial Advisor or your superannuation fund for detailed guidance tailored to your situation.",
+          "tokenUsage": {
+            "prompt": 128,
+            "completion": 132,
+            "cached": 0,
+            "total": 260,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 2534,
+          "finishReason": "stop",
+          "cost": 0.0000984,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Mon, 28 Sep 2026 12:16:28 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "1668",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "Can I access my superannuation during financial hardship?"
+          },
+          "assert": [
+            {
+              "type": "not-contains",
+              "value": "guarantee"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "tokenUsage": {
+          "prompt": 128,
+          "completion": 132,
+          "cached": 0,
+          "total": 260,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "question": "Can I access my superannuation during financial hardship?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Mon, 28 Sep 2026 12:16:28 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "1668",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0.0001047,
+        "error": "Expected output \"Employer contributions to superannuation are generally consistent across all employees, regardless of whether they are based in regional or metropolitan areas. However, there may be specific circumstances or arrangements that could affect contributions, such as different awards or agreements that apply to regional employees.\n\nIt's important to note that the Superannuation Guarantee (SG) requires employers to contribute a minimum percentage of an employee's ordinary time earnings to their super fund. This percentage is the same for all employees, but there may be variations in how employers implement these contributions based on their specific policies or industry standards.\n\nFor detailed information regarding your specific situation or any potential differences in contributions, it is advisable to consult a Financial Advisor or your employer's HR department.\" to equal \"There is no difference based on regional employees.\"",
+        "gradingResult": {
+          "pass": false,
+          "score": 0,
+          "reason": "Expected output \"Employer contributions to superannuation are generally consistent across all employees, regardless of whether they are based in regional or metropolitan areas. However, there may be specific circumstances or arrangements that could affect contributions, such as different awards or agreements that apply to regional employees.\n\nIt's important to note that the Superannuation Guarantee (SG) requires employers to contribute a minimum percentage of an employee's ordinary time earnings to their super fund. This percentage is the same for all employees, but there may be variations in how employers implement these contributions based on their specific policies or industry standards.\n\nFor detailed information regarding your specific situation or any potential differences in contributions, it is advisable to consult a Financial Advisor or your employer's HR department.\" to equal \"There is no difference based on regional employees.\"",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Expected output \"Employer contributions to superannuation are generally consistent across all employees, regardless of whether they are based in regional or metropolitan areas. However, there may be specific circumstances or arrangements that could affect contributions, such as different awards or agreements that apply to regional employees.\n\nIt's important to note that the Superannuation Guarantee (SG) requires employers to contribute a minimum percentage of an employee's ordinary time earnings to their super fund. This percentage is the same for all employees, but there may be variations in how employers implement these contributions based on their specific policies or industry standards.\n\nFor detailed information regarding your specific situation or any potential differences in contributions, it is advisable to consult a Financial Advisor or your employer's HR department.\" to equal \"There is no difference based on regional employees.\"",
+              "assertion": {
+                "type": "equals",
+                "value": "There is no difference based on regional employees."
+              }
+            }
+          ]
+        },
+        "id": "43f23109-046e-4c50-9003-c144b92c78ef",
+        "latencyMs": 1936,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: Is there any difference in how the employer contributes to superannuation for regional employees?\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "label": "module-7b\\01-assertions\\prompts\\system_prompt_v1.txt: You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: {{question}}\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "config": {}
+        },
+        "promptId": "b26b7031b53804e00e51e8387301d19133d622d6fb474cd549acaa91c917dabe",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": ""
+        },
+        "response": {
+          "output": "Employer contributions to superannuation are generally consistent across all employees, regardless of whether they are based in regional or metropolitan areas. However, there may be specific circumstances or arrangements that could affect contributions, such as different awards or agreements that apply to regional employees.\n\nIt's important to note that the Superannuation Guarantee (SG) requires employers to contribute a minimum percentage of an employee's ordinary time earnings to their super fund. This percentage is the same for all employees, but there may be variations in how employers implement these contributions based on their specific policies or industry standards.\n\nFor detailed information regarding your specific situation or any potential differences in contributions, it is advisable to consult a Financial Advisor or your employer's HR department.",
+          "tokenUsage": {
+            "prompt": 134,
+            "completion": 141,
+            "cached": 0,
+            "total": 275,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1936,
+          "finishReason": "stop",
+          "cost": 0.0001047,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Mon, 28 Sep 2026 12:16:27 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "1354",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "question": "Is there any difference in how the employer contributes to superannuation for regional employees?"
+          },
+          "assert": [
+            {
+              "type": "equals",
+              "value": "There is no difference based on regional employees."
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "tokenUsage": {
+          "prompt": 134,
+          "completion": 141,
+          "cached": 0,
+          "total": 275,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "question": "Is there any difference in how the employer contributes to superannuation for regional employees?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Mon, 28 Sep 2026 12:16:27 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "1354",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.00009765,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "Aggregate score 1.00 ≥ 0.8 threshold",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 390,
+            "prompt": 338,
+            "completion": 52,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "You may be able to access your superannuation before retirement if you satisfy a condition of release, such as certain financial hardship or compassionate circumstances."
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The output correctly states that early access to superannuation may be possible when a condition of release is met, including financial hardship and compassionate grounds, matching the rubric.",
+              "tokensUsed": {
+                "total": 390,
+                "prompt": 338,
+                "completion": 52,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Mon, 28 Sep 2026 12:16:30 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "1812",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nYou may be able to access your superannuation before retirement if you meet certain conditions of release. Some common circumstances that may allow early access include:\\n\\n1. **Financial hardship**: If you are experiencing severe financial difficulties.\\n2. **Compassionate grounds**: This may include situations such as needing to pay for medical treatment or to prevent foreclosure on your home.\\n3. **Medical condition**: If you have a terminal medical condition or are unable to work due to a disability.\\n\\nIt's important to note that accessing your superannuation early can have implications for your retirement savings. I recommend consulting a Financial Advisor to discuss your specific situation and options.\\n</Output>\\n<Rubric>\\nYou may be able to access your superannuation before retirement if you satisfy a condition of release, such as certain financial hardship or compassionate circumstances.\\n</Rubric>\"}]"
+              }
+            }
+          ]
+        },
+        "id": "8e135384-57e4-4732-be71-90de664920a0",
+        "latencyMs": 2670,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: Can I access my superannuation before retirement?\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "label": "module-7b\\01-assertions\\prompts\\system_prompt_v1.txt: You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: {{question}}\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "config": {}
+        },
+        "promptId": "b26b7031b53804e00e51e8387301d19133d622d6fb474cd549acaa91c917dabe",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": ""
+        },
+        "response": {
+          "output": "You may be able to access your superannuation before retirement if you meet certain conditions of release. Some common circumstances that may allow early access include:\n\n1. **Financial hardship**: If you are experiencing severe financial difficulties.\n2. **Compassionate grounds**: This may include situations such as needing to pay for medical treatment or to prevent foreclosure on your home.\n3. **Medical condition**: If you have a terminal medical condition or are unable to work due to a disability.\n\nIt's important to note that accessing your superannuation early can have implications for your retirement savings. I recommend consulting a Financial Advisor to discuss your specific situation and options.",
+          "tokenUsage": {
+            "prompt": 127,
+            "completion": 131,
+            "cached": 0,
+            "total": 258,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 2670,
+          "finishReason": "stop",
+          "cost": 0.00009765,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Mon, 28 Sep 2026 12:16:28 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "1455",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "Can I access my superannuation before retirement?"
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "You may be able to access your superannuation before retirement if you satisfy a condition of release, such as certain financial hardship or compassionate circumstances."
+            }
+          ],
+          "threshold": 0.8,
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 3,
+        "tokenUsage": {
+          "prompt": 127,
+          "completion": 131,
+          "cached": 0,
+          "total": 258,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 390,
+            "prompt": 338,
+            "completion": 52,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "question": "Can I access my superannuation before retirement?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Mon, 28 Sep 2026 12:16:28 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "1455",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0.00009945,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "Aggregate score 1.00 ≥ 0.8 threshold",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 456,
+            "prompt": 357,
+            "completion": 99,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 37,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "You may be able to access your superannuation before retirement if you meet certain conditions of release. The eligibility requirements depend on your circumstances. You may wish to speak with a qualified financial adviser for advice specific to your situation."
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The output states that early superannuation access may be possible under specified conditions of release, notes that eligibility depends on the person's circumstances, and recommends consulting a financial adviser for personalized advice.",
+              "tokensUsed": {
+                "total": 456,
+                "prompt": 357,
+                "completion": 99,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 37,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Mon, 28 Sep 2026 12:16:33 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "3074",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nYou may be able to access your superannuation before retirement if you meet certain conditions of release. Some of the common circumstances under which you can access your super include:\\n\\n1. **Financial Hardship**: If you are experiencing severe financial difficulties.\\n2. **Compassionate Grounds**: This may include situations such as needing to pay for medical treatment or to prevent foreclosure on your home.\\n3. **Medical Condition**: If you have a terminal medical condition or a serious illness.\\n\\nIt's important to note that accessing your superannuation early can have long-term implications for your retirement savings. I recommend consulting a Financial Advisor for personalized advice based on your specific situation.\\n</Output>\\n<Rubric>\\nYou may be able to access your superannuation before retirement if you meet certain conditions of release. The eligibility requirements depend on your circumstances. You may wish to speak with a qualified financial adviser for advice specific to your situation.\\n</Rubric>\"}]"
+              }
+            }
+          ]
+        },
+        "id": "a3bb1002-635f-4304-a893-1c58c34f8b14",
+        "latencyMs": 1796,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: Can I access my superannuation before retirement?\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "label": "module-7b\\01-assertions\\prompts\\system_prompt_v1.txt: You are a trusted Superannuation AI Assistant & your role is to provide clear,accurate and easy to understand general information about Superannuation.\nAnswer the user's question clearly and professionally.\nNever provide specific financial advice. Always recommend consulting a Financial Advisor.\n\nUser: {{question}}\n\n\n{\n  \"answer\": \"You may be able to access your superannuation before retirement if you meet a condition of release.\",\n  \"eligible\": true,\n  \"conditions\": [\n    \"Financial hardship\",\n    \"Compassionate grounds\"\n    \"Medical condition\"\n  ]\n}",
+          "config": {}
+        },
+        "promptId": "b26b7031b53804e00e51e8387301d19133d622d6fb474cd549acaa91c917dabe",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": ""
+        },
+        "response": {
+          "output": "You may be able to access your superannuation before retirement if you meet certain conditions of release. Some of the common circumstances under which you can access your super include:\n\n1. **Financial Hardship**: If you are experiencing severe financial difficulties.\n2. **Compassionate Grounds**: This may include situations such as needing to pay for medical treatment or to prevent foreclosure on your home.\n3. **Medical Condition**: If you have a terminal medical condition or a serious illness.\n\nIt's important to note that accessing your superannuation early can have long-term implications for your retirement savings. I recommend consulting a Financial Advisor for personalized advice based on your specific situation.",
+          "tokenUsage": {
+            "prompt": 127,
+            "completion": 134,
+            "cached": 0,
+            "total": 261,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1796,
+          "finishReason": "stop",
+          "cost": 0.00009945,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Mon, 28 Sep 2026 12:16:29 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "1482",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "Can I access my superannuation before retirement?"
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "You may be able to access your superannuation before retirement if you meet certain conditions of release. The eligibility requirements depend on your circumstances. You may wish to speak with a qualified financial adviser for advice specific to your situation."
+            }
+          ],
+          "threshold": 0.8,
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 4,
+        "tokenUsage": {
+          "prompt": 127,
+          "completion": 134,
+          "cached": 0,
+          "total": 261,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 456,
+            "prompt": 357,
+            "completion": 99,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 37,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "question": "Can I access my superannuation before retirement?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Mon, 28 Sep 2026 12:16:29 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "1482",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 4,
+      "failures": 1,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 648,
+        "completion": 634,
+        "cached": 0,
+        "total": 1282,
+        "numRequests": 5,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 846,
+          "prompt": 695,
+          "completion": 151,
+          "cached": 0,
+          "numRequests": 2,
+          "completionDetails": {
+            "reasoning": 37,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "durationMs": 7279,
+      "evaluationDurationMs": 7279
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "Cost Checking — Chained Assertions - Making Deterministic Assertions Fail so that subsequent assertions are skipped",
+    "prompts": [
+      "file://C:\\Thiyagu\\Learning\\LLM_Testing\\llm-testing\\module-7b\\01-assertions\\prompts\\system_prompt_v1.txt"
+    ],
+    "providers": [
+      {
+        "id": "openai:gpt-4o-mini",
+        "config": {
+          "temperature": 0.3,
+          "max_tokens": 400
+        }
+      }
+    ],
+    "tests": [
+      {
+        "vars": {
+          "question": "What percentage of my salary does my employer contribute to my superannuation?"
+        },
+        "assert": [
+          {
+            "type": "contains",
+            "value": "11%"
+          }
+        ]
+      },
+      {
+        "vars": {
+          "question": "Can I access my superannuation during financial hardship?"
+        },
+        "assert": [
+          {
+            "type": "not-contains",
+            "value": "guarantee"
+          }
+        ]
+      },
+      {
+        "vars": {
+          "question": "Is there any difference in how the employer contributes to superannuation for regional employees?"
+        },
+        "assert": [
+          {
+            "type": "equals",
+            "value": "There is no difference based on regional employees."
+          }
+        ]
+      },
+      {
+        "vars": {
+          "question": "Can I access my superannuation before retirement?"
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "value": "You may be able to access your superannuation before retirement if you satisfy a condition of release, such as certain financial hardship or compassionate circumstances."
+          }
+        ],
+        "threshold": 0.8
+      },
+      {
+        "vars": {
+          "question": "Can I access my superannuation before retirement?"
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "value": "You may be able to access your superannuation before retirement if you meet certain conditions of release. The eligibility requirements depend on your circumstances. You may wish to speak with a qualified financial adviser for advice specific to your situation."
+          }
+        ],
+        "threshold": 0.8
+      }
+    ],
+    "env": {},
+    "outputPath": [
+      "reports/module-7b-promptfoo.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {}
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.123.1",
+    "nodeVersion": "v24.18.1",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-09-28T12:16:34.021Z",
+    "evaluationCreatedAt": "2026-09-28T12:16:26.396Z"
+  },
+  "vars": [
+    "question"
+  ],
+  "runtimeOptions": {
+    "eventSource": "cli",
+    "showProgressBar": true,
+    "repeat": 1,
+    "maxConcurrency": 4,
+    "cache": false
+  }
+}
