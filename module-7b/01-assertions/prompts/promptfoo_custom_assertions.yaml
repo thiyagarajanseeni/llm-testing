@@ -1,0 +1,42 @@
+
+description: "Advanced assertion patterns — Custom Assertions"
+
+# providers:
+
+providers:
+          - id: openai:gpt-4o-mini
+            config:
+              temperature: 0.3 # Lower temp = more consistent outputs for testing
+              max_tokens: 400   # Limit the output length for testing consistency / Budget control
+  
+
+# Optionally add a second provider for comparison (Hour 2)
+# - id: anthropic:claude-haiku-4-5
+
+prompts:
+-   file://system_prompt_v1.txt
+
+
+tests:
+  # ── Test Case 1: Domain-Specific Custom Assertion ───────────────────────────────────────
+    - vars:
+        question: "What percentage of my salary does my employer contribute to my superannuation?"
+
+      assert:
+      - type: javascript
+        value: |
+          function assertEmployerContribution(answer) {
+            const regex = /(\d+)%/;
+            const match = answer.match(regex);
+            if (!match) {
+              throw new Error("Answer does not contain a percentage.");
+            }
+            const percentage = parseInt(match[1], 10);
+            if (percentage < 0 || percentage > 100) {
+              throw new Error("Percentage out of valid range (0-100).");
+            }
+            return true;
+          }
+
+# ── Output ─────────────────────────────────────────────────────
+outputPath: reports/module-7b-promptfoo.json
