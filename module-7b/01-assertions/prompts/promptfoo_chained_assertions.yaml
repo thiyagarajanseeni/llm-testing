@@ -1,5 +1,5 @@
 
-description: "Cost Checking — Chained Assertions - Making Deterministic Assertions Fail so that subsequent assertions are skipped"
+description: "Cost Checking — Chained Assertions"
 
 # providers:
 
@@ -18,60 +18,32 @@ prompts:
 
 
 tests:
-
-# Test Cases for Chained Assertions (Ensuring that if one assertion fails, subsequent assertions are skipped)
-
-# # ── Test Case 1: Superannuation Contribution Percentage by Employer using contains ───────────────────────────────────────
-    - vars:
-        question: "What percentage of my salary does my employer contribute to my superannuation?"
-
-      assert:
-      - type: contains
-        value: "11%"
-
-  # ── Test Case 2: Access to Superannuation during Financial Hardship using not-contains ───────────────────────────────────────
-    - vars:
-        question: "Can I access my superannuation during financial hardship?"
-
-      assert:
-      - type: not-contains
-        value: "guarantee"
-
-    # ── Test Case 3: Superannuation contribution by employer for Men and Women using equals ───────────────────────────────────────
-    - vars:
-        question: "Is there any difference in how the employer contributes to superannuation for regional employees?"
-
-      assert:
-      - type: equals
-        value: "There is no difference based on regional employees." 
-
-
-  # ── Test Case 4: Financial Guidance using llm rubric for Answer Relevance ───────────────────────────────────────
     - vars:
         question: "Can I access my superannuation before retirement?"
 
       assert:
-      - type: llm-rubric
-        value: "You may be able to access your superannuation before retirement if
-                you satisfy a condition of release, such as certain financial hardship
-                or compassionate circumstances." 
-      threshold: 0.8        
+      # # Layer 1 — Basic response validation
+        - type: not-contains
+          value: "guarantee"
 
-# ── Test Case 5: Financial Guidance using llm rubric for Tone ───────────────────────────────────────
-    - vars:
-        question: "Can I access my superannuation before retirement?"
+      # Layer 2 — Deterministic content validation
+        - type: regex
+          value: "(?i)(early access|condition|eligibility|retirement)"
 
-      assert:
-      - type: llm-rubric
-        value: "You may be able to access your superannuation before retirement if
-                you meet certain conditions of release. The eligibility requirements
-                depend on your circumstances. You may wish to speak with a qualified
-                financial adviser for advice specific to your situation." 
-      threshold: 0.8    
+      # Layer 3 — Semantic evaluation 
+        - type: llm-rubric
+          value: |
+            "Evaluate whether the response correctly explains that
+            superannuation may be accessed before retirement only
+            when applicable conditions of release are met."
 
-
-
-
-
+          The response should:
+          - directly answer the question
+          - explain that eligibility depends on circumstances
+          - avoid inventing eligibility requirements
+          - avoid implying unrestricted early access
+          - recommend checking applicable requirements where appropriate
+          threshold: 0.8
+          
 # ── Output ─────────────────────────────────────────────────────
 outputPath: reports/module-7b-promptfoo.json
