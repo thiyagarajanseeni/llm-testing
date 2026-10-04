@@ -1,0 +1,47 @@
+{
+  "models": [
+    {
+      "model": "gpt-4o-mini",
+      "requests": 2,
+      "errors": 0,
+      "avg_input_tokens": 20.0,
+      "avg_output_tokens": 338.0,
+      "avg_tiktoken_input": 13.0,
+      "avg_tiktoken_output": 338.0,
+      "avg_latency_ms": 5850.3,
+      "total_input_cost_usd": 6e-06,
+      "total_output_cost_usd": 0.0004056,
+      "total_cost_usd": 0.0004116,
+      "avg_total_cost_usd": 0.0002058
+    },
+    {
+      "model": "phi:latest",
+      "requests": 2,
+      "errors": 0,
+      "avg_input_tokens": 45.0,
+      "avg_output_tokens": 188.0,
+      "avg_tiktoken_input": 13.0,
+      "avg_tiktoken_output": 178.5,
+      "avg_latency_ms": 34902.5,
+      "total_input_cost_usd": 0.0,
+      "total_output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "avg_total_cost_usd": 0.0
+    },
+    {
+      "model": "llama3.2:latest",
+      "requests": 2,
+      "errors": 0,
+      "avg_input_tokens": 38.0,
+      "avg_output_tokens": 496.0,
+      "avg_tiktoken_input": 38.0,
+      "avg_tiktoken_output": 496.0,
+      "avg_latency_ms": 101230.7,
+      "total_input_cost_usd": 0.0,
+      "total_output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "avg_total_cost_usd": 0.0
+    }
+  ],
+  "grand_total_cost_usd": 0.0004116
+}
