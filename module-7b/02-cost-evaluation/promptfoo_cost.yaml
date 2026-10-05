@@ -1,0 +1,186 @@
+# ============================================================
+# promptfoo_cost.yaml
+# Module 7B — Cost Evaluation Workshop (Session 3, Hour 2)
+# Track 2A: LLM & GenAI Testing Essentials
+#
+# Usage:
+#   npx promptfoo eval --config promptfoo_cost.yaml --output results.json
+#   npx promptfoo view
+#
+# Prerequisites:
+#   - OPENAI_API_KEY set in .env
+#   - ANTHROPIC_API_KEY set in .env
+#   - LM Studio running at http://localhost:1234 with Llama-3 loaded
+# ============================================================
+
+description: "Session 3 Hour 2 — Multi-provider cost comparison across GPT-4o, Claude Sonnet, Llama-3"
+
+# ── Providers ────────────────────────────────────────────────
+providers:
+  - id: openai:gpt-4o
+    label: "GPT-4o (OpenAI)"
+    config:
+      temperature: 0
+      max_tokens: 256
+
+
+  # - id: ollama:llama3.2:latest
+  #   label: "Llama 3.2 (Ollama)"
+  #   config:
+  #     temperature: 0.3
+  #     max_tokens: 400
+
+
+  # - id: ollama:phi:latest
+  #   label: "Phi (Ollama)"
+  #   config:
+  #     temperature: 0.3
+  #     max_tokens: 400
+
+#  - id: anthropic:claude-3-5-sonnet-20241022
+#    label: "Claude Sonnet 3.5 (Anthropic)"
+#    config:
+#      temperature: 0
+#      max_tokens: 256
+
+#  - id: openai:local-model
+#    label: "Llama-3 8B (LM Studio local)"
+#    config:
+#      apiBaseUrl: http://localhost:1234/v1
+#      apiKey: lm-studio
+#      temperature: 0
+#      max_tokens: 256
+
+# ── System Prompt ─────────────────────────────────────────────
+# Intentionally short — we are measuring cost, so keep system
+# prompt tokens minimal and consistent across all providers.
+prompts:
+  - label: "intent-classifier"
+    raw: |
+      Classify the intent of the following customer message.
+      Reply with exactly one word from: cancel / statement / technical support / complaint / Superannuation plans / administration charges / other.
+
+      Message: {{message}}
+
+# ── Test Cases ────────────────────────────────────────────────
+# 5 diverse prompt types matching cost_comparison.py TEST_PROMPTS
+# Each maps to a real-world customer service scenario
+
+tests:
+
+  # 1. Cancellation intent
+  - description: "Clear cancellation request"
+    vars:
+      message: "I want to cancel my Superannuation immediately"
+    assert:
+      - type: contains
+        value: "cancel"
+      - type: llm-rubric
+        value: "Response correctly identifies cancellation as the primary intent"
+      - type: cost
+        threshold: 0.002   # Fail if this single call costs more than $0.002
+
+  # 2. Statement inquiry
+  - description: "Superannuation Statement Question"
+    vars:
+      message: "I was charged twice for administration charges"
+    assert:
+      - type: contains
+        value: "administration charges"
+      - type: llm-rubric
+        value: "Response identifies complaint on administration charges inquiry as the intent"
+      - type: cost
+        threshold: 0.002
+
+  # 3. Technical support
+  - description: "Technical issue report"
+    vars:
+      message: "The Superannuation app keeps crashing every time I try to log in on my iPhone"
+    assert:
+      - type: contains
+        value: "technical support"
+      - type: llm-rubric
+        value: "Response identifies a technical support request"
+      - type: cost
+        threshold: 0.002
+
+  # 4. Complaint
+  - description: "Customer complaint"
+    vars:
+      message: "This is absolutely unacceptable. I've been waiting 3 weeks for a response for my complaint"
+    assert:
+      - type: contains
+        value: "complaint"
+      - type: llm-rubric
+        value: "Response identifies a complaint or frustration as the primary intent"
+      - type: cost
+        threshold: 0.002
+
+  # 5. General / other
+  - description: "General / ambiguous inquiry"
+    vars:
+      message: "Hi, I just wanted to know what Superannuation plans you offer"
+    assert:
+      - type: contains-any
+        value:
+        - "other"
+        - "technical support"
+        - "statement"
+        - "Superannuation plans"
+        - "administration charges"
+      - type: llm-rubric
+        value: "Response identifies a general inquiry on Superannuation plans"
+      - type: cost
+        threshold: 0.002
+
+## ── Compression Comparison Tests ──────────────────────────────
+## Lab 4: Run the same task with verbose vs compressed prompts
+## Compare token counts in the promptfoo view output
+#
+#  # 6. VERBOSE version (high token count — before compression)
+#  - description: "[COMPRESSION] Verbose prompt — before"
+#    vars:
+#      message: "Cancel my subscription"
+#    metadata:
+#      compression: "before"
+#      notes: "Verbose system prompt — count tokens in results"
+#    assert:
+#      - type: icontains
+#        value: "cancel"
+#      - type: cost
+#        threshold: 0.005
+#
+#  # 7. COMPRESSED version — same task, minimal tokens
+#  - description: "[COMPRESSION] Compressed prompt — after"
+#    vars:
+#      message: "Cancel my subscription"
+#    metadata:
+#      compression: "after"
+#      notes: "Compressed system prompt — compare token count vs test 6"
+#    # Override the shared prompt with a tighter version for this test only
+#    options:
+#      provider:
+#        config:
+#          # Note: to truly test compression, swap the prompt here
+#          # or use promptfoo's --var flag at runtime
+#          temperature: 0
+#    assert:
+#      - type: icontains
+#        value: "cancel"
+#      - type: cost
+#        threshold: 0.001   # Tighter budget — compressed prompt should be cheaper
+
+# ── Output Configuration ──────────────────────────────────────
+outputPath: ./results.json
+
+# ── Evaluation Settings ───────────────────────────────────────
+evaluateOptions:
+  maxConcurrency: 2        # Keep low to avoid rate limits during the lab
+  delay: 500               # 500ms delay between calls — avoids burst rate limits
+
+# ── Sharing / Display ─────────────────────────────────────────
+# Run `npx promptfoo view` after eval to see:
+#   - Side-by-side provider responses
+#   - Token usage per call
+#   - Cost per call (if provider returns usage data)
+#   - Pass/fail per assertion
