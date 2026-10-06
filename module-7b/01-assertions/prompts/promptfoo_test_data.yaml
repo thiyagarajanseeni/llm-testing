@@ -1,0 +1,39 @@
+description: "Running tests from test_data.csv"
+
+providers:
+        - id: openai:gpt-4o-mini
+          config:
+              temperature: 0.3 # Lower temp = more consistent outputs for testing
+              max_tokens: 400   # Limit the output length for testing consistency / Budget control
+
+
+#  - anthropic:claude-haiku-4-5-20251001
+
+prompts:
+  - file://system_prompt_v1.txt
+
+tests: file://data/test_data.csv
+
+# PromptFoo will read __expected__ from each row
+# and replace {{variables}} using other column values
+
+# ── Output ─────────────────────────────────────────────────────
+outputPath: reports/module-7b-promptfoo.json
+
+
+# Task 5:
+
+#3.
+
+# equals falls under deterministic assertion type and when used, the output must exactly match the expected value..
+# In LLM testing it can produce same output but with different word or sentence & it might cause failure
+# Therefore, using "equals" assertion in LLM testing should be done with caution & can be used selectively when exact match is critical.
+
+#4.
+# use llm-rubric over contains when evaluating cannot be determined by simple substring matching
+# llm-rubric cost will be higher than using contains as its non deterministic and requires more computation (input tokens,output tokens, model inference time)
+
+
+
+
+
