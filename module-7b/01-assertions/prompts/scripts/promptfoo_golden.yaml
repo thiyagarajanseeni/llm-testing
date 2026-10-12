@@ -1,0 +1,13 @@
+description: "Session 3 - Module 7B Golden Tests"
+
+providers:
+  - openai:gpt-4o
+  #- ollama:phi:latest
+  #- anthropic:claude-haiku-4-5-20251001
+
+prompts:
+  - file://../system_prompt_v2.txt
+
+tests: file://../../data/golden_data.csv
+
+# Once test have been executed, review the results to ensure they match the expected golden data by capturing it in baseline.md file.
