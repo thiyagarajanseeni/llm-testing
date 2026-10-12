@@ -1,0 +1,50 @@
+description: "Multi-Model Qualitative Comparison — Session 3 Hour 3"
+
+# ── Providers ──────────────────────────────────────────────────────────────
+# Three models, same temperature so differences are behavioral not random.
+# Comment out ollama if you don't have it running locally.
+
+providers:
+  # - id: openai:gpt-4o-mini
+  #   label: "GPT-4o Mini"
+  #   config:
+  #     temperature: 0.2
+
+  - id: ollama:chat:phi:latest
+    label: "Phi Latest"
+    config:
+      temperature: 0.2
+      
+
+  - id: ollama:chat:llama3.2:latest
+    label: "Llama 3.2 Latest"
+    config:
+      temperature: 0.2      
+
+  # - id: anthropic:claude-haiku-4-5-20251001
+  #   label: "Claude-4.5-Haiku"
+  #   config:
+  #     temperature: 0.2
+
+  # - id: ollama:gpt-oss:20b
+  #   label: "gpt-oss:20b-Local"
+  #   config:
+  #     temperature: 0.2
+
+# ── Prompt ─────────────────────────────────────────────────────────────────
+# All three models receive the same system prompt so differences come from
+# the model, not the instructions.
+
+prompts:
+  - file://../system_prompt_v1.txt
+
+# ── Test data ──────────────────────────────────────────────────────────────
+# 10 prompts: 3 happy_path, 4 edge_case, 3 adversarial.
+# Each row has its own assertion in the __expected__ column.
+
+tests: file://../data/comparison_prompts.csv
+
+# ── Output ─────────────────────────────────────────────────────────────────
+outputPath: ../reports/model_comparison_results.json
+
+
