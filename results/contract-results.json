@@ -1,0 +1,1641 @@
+{
+  "evalId": "eval-4QH-2026-10-16T02:52:42",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-10-16T02:52:42.172Z",
+    "prompts": [
+      {
+        "raw": "You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: {{question}}",
+        "label": "v1.0.0 — JSON schema enforced (MUST PASS): module-7b\\03-prompt-management\\contract\\contract_prompt_v1.0.0.txt: You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: {{question}}",
+        "id": "8ceb73eb1347116e455eda69e07680c68d59b705bf3ba9e70e3fbbe5aae44432",
+        "provider": "GPT-4o Mini",
+        "metrics": {
+          "score": 3.7142857142857144,
+          "testPassCount": 2,
+          "testFailCount": 3,
+          "testErrorCount": 0,
+          "assertPassCount": 16,
+          "assertFailCount": 6,
+          "totalLatencyMs": 8807,
+          "tokenUsage": {
+            "prompt": 1230,
+            "completion": 255,
+            "cached": 0,
+            "total": 1485,
+            "numRequests": 5,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {
+            "schema_contract": 5,
+            "required_key_answer": 1,
+            "required_key_confidence": 1,
+            "required_key_escalate": 1,
+            "required_key_category": 1,
+            "business_rule_policy_accuracy": 0,
+            "business_rule_no_unnecessary_escalation": 0,
+            "all_required_keys_present": 2,
+            "response_length_limit": 1,
+            "no_refusal_phrases": 1,
+            "business_rule_escalate_unknown": 1,
+            "business_rule_no_speculation": 1,
+            "correct_category_routing": 0,
+            "business_rule_cancellation_accuracy": 0,
+            "business_rule_billing_issue_escalates": 1
+          },
+          "namedScoresCount": {
+            "schema_contract": 5,
+            "required_key_answer": 1,
+            "required_key_confidence": 1,
+            "required_key_escalate": 1,
+            "required_key_category": 1,
+            "business_rule_policy_accuracy": 1,
+            "business_rule_no_unnecessary_escalation": 1,
+            "all_required_keys_present": 2,
+            "response_length_limit": 1,
+            "no_refusal_phrases": 1,
+            "business_rule_escalate_unknown": 1,
+            "business_rule_no_speculation": 1,
+            "correct_category_routing": 3,
+            "business_rule_cancellation_accuracy": 1,
+            "business_rule_billing_issue_escalates": 1
+          },
+          "namedScoreWeights": {
+            "schema_contract": 5,
+            "required_key_answer": 1,
+            "required_key_confidence": 1,
+            "required_key_escalate": 1,
+            "required_key_category": 1,
+            "business_rule_policy_accuracy": 1,
+            "business_rule_no_unnecessary_escalation": 1,
+            "all_required_keys_present": 2,
+            "response_length_limit": 1,
+            "no_refusal_phrases": 1,
+            "business_rule_escalate_unknown": 1,
+            "business_rule_no_speculation": 1,
+            "correct_category_routing": 3,
+            "business_rule_cancellation_accuracy": 1,
+            "business_rule_billing_issue_escalates": 1
+          },
+          "cost": 0.0003374999999999999
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0.00006749999999999999,
+        "error": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.escalate === false;\n} catch(e) { return false; }",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.7142857142857143,
+          "reason": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.escalate === false;\n} catch(e) { return false; }",
+          "namedScores": {
+            "schema_contract": 1,
+            "required_key_answer": 1,
+            "required_key_confidence": 1,
+            "required_key_escalate": 1,
+            "required_key_category": 1,
+            "business_rule_policy_accuracy": 0,
+            "business_rule_no_unnecessary_escalation": 0
+          },
+          "namedScoreWeights": {
+            "schema_contract": 1,
+            "required_key_answer": 1,
+            "required_key_confidence": 1,
+            "required_key_escalate": 1,
+            "required_key_category": 1,
+            "business_rule_policy_accuracy": 1,
+            "business_rule_no_unnecessary_escalation": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "metric": "schema_contract"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.hasOwnProperty('answer') && typeof p.answer === 'string' && p.answer.length > 0;\n} catch(e) { return false; }\n",
+                "metric": "required_key_answer"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return typeof p.confidence === 'number' && p.confidence >= 0 && p.confidence <= 1;\n} catch(e) { return false; }\n",
+                "metric": "required_key_confidence"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return typeof p.escalate === 'boolean';\n} catch(e) { return false; }\n",
+                "metric": "required_key_escalate"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  const valid = ['salary_sacrifice','cancellation', 'admin_fee', 'other'];\n  return valid.includes(p.category);\n} catch(e) { return false; }\n",
+                "metric": "required_key_category"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.answer.includes('30');\n} catch(e) { return false; }",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.answer.includes('30');\n} catch(e) { return false; }\n",
+                "metric": "business_rule_policy_accuracy"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.escalate === false;\n} catch(e) { return false; }",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.escalate === false;\n} catch(e) { return false; }\n",
+                "metric": "business_rule_no_unnecessary_escalation"
+              }
+            }
+          ]
+        },
+        "id": "2616d13c-e619-4368-9b46-1c40c733c43b",
+        "latencyMs": 1715,
+        "namedScores": {
+          "schema_contract": 1,
+          "required_key_answer": 1,
+          "required_key_confidence": 1,
+          "required_key_escalate": 1,
+          "required_key_category": 1,
+          "business_rule_policy_accuracy": 0,
+          "business_rule_no_unnecessary_escalation": 0
+        },
+        "prompt": {
+          "raw": "You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: ",
+          "label": "v1.0.0 — JSON schema enforced (MUST PASS): module-7b\\03-prompt-management\\contract\\contract_prompt_v1.0.0.txt: You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: {{question}}",
+          "config": {}
+        },
+        "promptId": "8ceb73eb1347116e455eda69e07680c68d59b705bf3ba9e70e3fbbe5aae44432",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": "GPT-4o Mini"
+        },
+        "response": {
+          "output": "{\n  \"answer\": \"I'm here to assist you with your superannuation questions. Please provide more details about your inquiry.\",\n  \"confidence\": 0.0,\n  \"escalate\": true,\n  \"category\": \"other\"\n}",
+          "tokenUsage": {
+            "prompt": 246,
+            "completion": 51,
+            "cached": 0,
+            "total": 297,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1715,
+          "finishReason": "stop",
+          "cost": 0.00006749999999999999,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Fri, 16 Oct 2026 02:52:43 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "773",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 0.7142857142857143,
+        "success": false,
+        "testCase": {
+          "description": "Salary Sacrifice — must return valid JSON with all required keys",
+          "vars": {
+            "user_input": "What is salary sacrifice?"
+          },
+          "assert": [
+            {
+              "type": "is-json",
+              "metric": "schema_contract"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.hasOwnProperty('answer') && typeof p.answer === 'string' && p.answer.length > 0;\n} catch(e) { return false; }\n",
+              "metric": "required_key_answer"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return typeof p.confidence === 'number' && p.confidence >= 0 && p.confidence <= 1;\n} catch(e) { return false; }\n",
+              "metric": "required_key_confidence"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return typeof p.escalate === 'boolean';\n} catch(e) { return false; }\n",
+              "metric": "required_key_escalate"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  const valid = ['salary_sacrifice','cancellation', 'admin_fee', 'other'];\n  return valid.includes(p.category);\n} catch(e) { return false; }\n",
+              "metric": "required_key_category"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.answer.includes('30');\n} catch(e) { return false; }\n",
+              "metric": "business_rule_policy_accuracy"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.escalate === false;\n} catch(e) { return false; }\n",
+              "metric": "business_rule_no_unnecessary_escalation"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "tokenUsage": {
+          "prompt": 246,
+          "completion": 51,
+          "cached": 0,
+          "total": 297,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "user_input": "What is salary sacrifice?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 16 Oct 2026 02:52:43 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "773",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.00006749999999999999,
+        "error": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.answer.toLowerCase().includes('admin fee') ||\n          p.answer.toLowerCase().includes('period') ||\n          p.answer.toLowerCase().includes('access');\n} catch(e) { return false; }",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.25,
+          "reason": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.answer.toLowerCase().includes('admin fee') ||\n          p.answer.toLowerCase().includes('period') ||\n          p.answer.toLowerCase().includes('access');\n} catch(e) { return false; }",
+          "namedScores": {
+            "schema_contract": 1,
+            "correct_category_routing": 0,
+            "business_rule_cancellation_accuracy": 0
+          },
+          "namedScoreWeights": {
+            "schema_contract": 1,
+            "correct_category_routing": 2,
+            "business_rule_cancellation_accuracy": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "metric": "schema_contract"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.category === 'cancellation';\n} catch (e) {\n  return false;\n}",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.category === 'cancellation';\n} catch (e) {\n  return false;\n}\n",
+                "metric": "correct_category_routing"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.category === 'cancellation';\n} catch(e) { return false; }",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.category === 'cancellation';\n} catch(e) { return false; }\n",
+                "metric": "correct_category_routing"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.answer.toLowerCase().includes('admin fee') ||\n          p.answer.toLowerCase().includes('period') ||\n          p.answer.toLowerCase().includes('access');\n} catch(e) { return false; }",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.answer.toLowerCase().includes('admin fee') ||\n          p.answer.toLowerCase().includes('period') ||\n          p.answer.toLowerCase().includes('access');\n} catch(e) { return false; }\n",
+                "metric": "business_rule_cancellation_accuracy"
+              }
+            }
+          ]
+        },
+        "id": "15df2ebe-14dc-4ed4-b9af-a55b3d04ad23",
+        "latencyMs": 2325,
+        "namedScores": {
+          "schema_contract": 1,
+          "correct_category_routing": 0,
+          "business_rule_cancellation_accuracy": 0
+        },
+        "prompt": {
+          "raw": "You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: ",
+          "label": "v1.0.0 — JSON schema enforced (MUST PASS): module-7b\\03-prompt-management\\contract\\contract_prompt_v1.0.0.txt: You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: {{question}}",
+          "config": {}
+        },
+        "promptId": "8ceb73eb1347116e455eda69e07680c68d59b705bf3ba9e70e3fbbe5aae44432",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": "GPT-4o Mini"
+        },
+        "response": {
+          "output": "{\n  \"answer\": \"I'm here to assist you with your superannuation questions. Please provide more details about your inquiry.\",\n  \"confidence\": 0.0,\n  \"escalate\": true,\n  \"category\": \"other\"\n}",
+          "tokenUsage": {
+            "prompt": 246,
+            "completion": 51,
+            "cached": 0,
+            "total": 297,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 2325,
+          "finishReason": "stop",
+          "cost": 0.00006749999999999999,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Fri, 16 Oct 2026 02:52:44 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "1319",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 0.25,
+        "success": false,
+        "testCase": {
+          "description": "Cancellation — must return valid schema",
+          "vars": {
+            "user_input": "How do I cancel my superannuation?"
+          },
+          "assert": [
+            {
+              "type": "is-json",
+              "metric": "schema_contract"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.category === 'cancellation';\n} catch (e) {\n  return false;\n}\n",
+              "metric": "correct_category_routing"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.category === 'cancellation';\n} catch(e) { return false; }\n",
+              "metric": "correct_category_routing"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.answer.toLowerCase().includes('admin fee') ||\n          p.answer.toLowerCase().includes('period') ||\n          p.answer.toLowerCase().includes('access');\n} catch(e) { return false; }\n",
+              "metric": "business_rule_cancellation_accuracy"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "tokenUsage": {
+          "prompt": 246,
+          "completion": 51,
+          "cached": 0,
+          "total": 297,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "user_input": "How do I cancel my superannuation?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 16 Oct 2026 02:52:44 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "1319",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.00006749999999999999,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "schema_contract": 1,
+            "business_rule_escalate_unknown": 1,
+            "business_rule_no_speculation": 1
+          },
+          "namedScoreWeights": {
+            "schema_contract": 1,
+            "business_rule_escalate_unknown": 1,
+            "business_rule_no_speculation": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "metric": "schema_contract"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.escalate === true;\n} catch(e) { return false; }\n",
+                "metric": "business_rule_escalate_unknown"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  const answer = p.answer.toLowerCase();\n  return !answer.includes('yes') && !answer.includes('we offer') &&\n          !answer.includes('discount available');\n} catch(e) { return false; }\n",
+                "metric": "business_rule_no_speculation"
+              }
+            }
+          ]
+        },
+        "id": "113d5f7a-40ea-4e0d-a25e-070b1f761c8b",
+        "latencyMs": 1814,
+        "namedScores": {
+          "schema_contract": 1,
+          "business_rule_escalate_unknown": 1,
+          "business_rule_no_speculation": 1
+        },
+        "prompt": {
+          "raw": "You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: ",
+          "label": "v1.0.0 — JSON schema enforced (MUST PASS): module-7b\\03-prompt-management\\contract\\contract_prompt_v1.0.0.txt: You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: {{question}}",
+          "config": {}
+        },
+        "promptId": "8ceb73eb1347116e455eda69e07680c68d59b705bf3ba9e70e3fbbe5aae44432",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": "GPT-4o Mini"
+        },
+        "response": {
+          "output": "{\n  \"answer\": \"I'm here to assist you with your superannuation questions. Please provide more details about your inquiry.\",\n  \"confidence\": 0.0,\n  \"escalate\": true,\n  \"category\": \"other\"\n}",
+          "tokenUsage": {
+            "prompt": 246,
+            "completion": 51,
+            "cached": 0,
+            "total": 297,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1814,
+          "finishReason": "stop",
+          "cost": 0.00006749999999999999,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Fri, 16 Oct 2026 02:52:43 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "797",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Unknown question — must escalate, must NOT speculate",
+          "vars": {
+            "user_input": "Do you offer a discount?"
+          },
+          "assert": [
+            {
+              "type": "is-json",
+              "metric": "schema_contract"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.escalate === true;\n} catch(e) { return false; }\n",
+              "metric": "business_rule_escalate_unknown"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  const answer = p.answer.toLowerCase();\n  return !answer.includes('yes') && !answer.includes('we offer') &&\n          !answer.includes('discount available');\n} catch(e) { return false; }\n",
+              "metric": "business_rule_no_speculation"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "tokenUsage": {
+          "prompt": 246,
+          "completion": 51,
+          "cached": 0,
+          "total": 297,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "user_input": "Do you offer a discount?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 16 Oct 2026 02:52:43 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "797",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0.00006749999999999999,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "schema_contract": 1,
+            "all_required_keys_present": 1,
+            "response_length_limit": 1,
+            "no_refusal_phrases": 1
+          },
+          "namedScoreWeights": {
+            "schema_contract": 1,
+            "all_required_keys_present": 1,
+            "response_length_limit": 1,
+            "no_refusal_phrases": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "metric": "schema_contract"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.hasOwnProperty('answer') && p.hasOwnProperty('escalate') &&\n          p.hasOwnProperty('confidence') && p.hasOwnProperty('category');\n} catch(e) { return false; }\n",
+                "metric": "all_required_keys_present"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.answer.split(' ').length < 200;\n} catch(e) { return false; }\n",
+                "metric": "response_length_limit"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  const a = p.answer.toLowerCase();\n  return !a.includes(\"i can't help\") && !a.includes(\"i cannot help\") &&\n          !a.includes(\"i'm unable\");\n} catch(e) { return false; }\n",
+                "metric": "no_refusal_phrases"
+              }
+            }
+          ]
+        },
+        "id": "d294e22a-b2ef-4957-b2f6-20083df40be7",
+        "latencyMs": 1811,
+        "namedScores": {
+          "schema_contract": 1,
+          "all_required_keys_present": 1,
+          "response_length_limit": 1,
+          "no_refusal_phrases": 1
+        },
+        "prompt": {
+          "raw": "You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: ",
+          "label": "v1.0.0 — JSON schema enforced (MUST PASS): module-7b\\03-prompt-management\\contract\\contract_prompt_v1.0.0.txt: You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: {{question}}",
+          "config": {}
+        },
+        "promptId": "8ceb73eb1347116e455eda69e07680c68d59b705bf3ba9e70e3fbbe5aae44432",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": "GPT-4o Mini"
+        },
+        "response": {
+          "output": "{\n  \"answer\": \"I'm here to assist you with your superannuation questions. Please provide more details about your inquiry.\",\n  \"confidence\": 0.0,\n  \"escalate\": true,\n  \"category\": \"other\"\n}",
+          "tokenUsage": {
+            "prompt": 246,
+            "completion": 51,
+            "cached": 0,
+            "total": 297,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1811,
+          "finishReason": "stop",
+          "cost": 0.00006749999999999999,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Fri, 16 Oct 2026 02:52:43 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "803",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Angry customer — schema must hold even under pressure",
+          "vars": {
+            "user_input": "This is ridiculous! I want my superannuation money back NOW. Your product is garbage."
+          },
+          "assert": [
+            {
+              "type": "is-json",
+              "metric": "schema_contract"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.hasOwnProperty('answer') && p.hasOwnProperty('escalate') &&\n          p.hasOwnProperty('confidence') && p.hasOwnProperty('category');\n} catch(e) { return false; }\n",
+              "metric": "all_required_keys_present"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.answer.split(' ').length < 200;\n} catch(e) { return false; }\n",
+              "metric": "response_length_limit"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  const a = p.answer.toLowerCase();\n  return !a.includes(\"i can't help\") && !a.includes(\"i cannot help\") &&\n          !a.includes(\"i'm unable\");\n} catch(e) { return false; }\n",
+              "metric": "no_refusal_phrases"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 3,
+        "tokenUsage": {
+          "prompt": 246,
+          "completion": 51,
+          "cached": 0,
+          "total": 297,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "user_input": "This is ridiculous! I want my superannuation money back NOW. Your product is garbage."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 16 Oct 2026 02:52:43 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "803",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0.00006749999999999999,
+        "error": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.category === 'admin_fee';\n} catch(e) { return false; }",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.75,
+          "reason": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.category === 'admin_fee';\n} catch(e) { return false; }",
+          "namedScores": {
+            "schema_contract": 1,
+            "all_required_keys_present": 1,
+            "business_rule_billing_issue_escalates": 1,
+            "correct_category_routing": 0
+          },
+          "namedScoreWeights": {
+            "schema_contract": 1,
+            "all_required_keys_present": 1,
+            "business_rule_billing_issue_escalates": 1,
+            "correct_category_routing": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "metric": "schema_contract"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.hasOwnProperty('answer') &&\n          p.hasOwnProperty('escalate') &&\n          p.hasOwnProperty('confidence') &&\n          p.hasOwnProperty('category');\n} catch(e) { return false; }\n",
+                "metric": "all_required_keys_present"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.escalate === true;\n} catch(e) { return false; }\n",
+                "metric": "business_rule_billing_issue_escalates"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\ntry {\n  const p = JSON.parse(output);\n  return p.category === 'admin_fee';\n} catch(e) { return false; }",
+              "assertion": {
+                "type": "javascript",
+                "value": "try {\n  const p = JSON.parse(output);\n  return p.category === 'admin_fee';\n} catch(e) { return false; }\n",
+                "metric": "correct_category_routing"
+              }
+            }
+          ]
+        },
+        "id": "770c4a18-5535-4212-9ac1-690dc5207165",
+        "latencyMs": 1142,
+        "namedScores": {
+          "schema_contract": 1,
+          "all_required_keys_present": 1,
+          "business_rule_billing_issue_escalates": 1,
+          "correct_category_routing": 0
+        },
+        "prompt": {
+          "raw": "You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: ",
+          "label": "v1.0.0 — JSON schema enforced (MUST PASS): module-7b\\03-prompt-management\\contract\\contract_prompt_v1.0.0.txt: You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nIMPORTANT: You MUST always respond in valid JSON format with exactly these keys:\n{\n  \"answer\": \"<your response here>\",\n  \"confidence\": <number between 0.0 and 1.0>,\n  \"escalate\": <true if issue needs human agent, false otherwise>,\n  \"category\": \"<one of: salary sacrifice, cancellation, admin fee, account, other>\"\n}\n\nDo NOT include any text outside the JSON. Do NOT use markdown code fences.\nDo NOT add extra keys. Respond ONLY with the JSON object.\n\nPolicies:\n- Salary sacrifice: Explain relevant considerations without recommending a personal amount.\n- Cancellation: Explain that super withdrawals are restricted by law and depend on eligibility and a valid condition of release.\n- Admin Fee: Do not invent a reason. Recommend checking the latest fee disclosure or contacting the fund.\n- Other: Requests that do not fit the above categories\n\nIf you don't know something, set escalate to true and say so in the answer field.\nDo NOT speculate about policies not listed above.\n\n\nUser: {{question}}",
+          "config": {}
+        },
+        "promptId": "8ceb73eb1347116e455eda69e07680c68d59b705bf3ba9e70e3fbbe5aae44432",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": "GPT-4o Mini"
+        },
+        "response": {
+          "output": "{\n  \"answer\": \"I'm here to assist you with your superannuation questions. Please provide more details about your inquiry.\",\n  \"confidence\": 0.0,\n  \"escalate\": true,\n  \"category\": \"other\"\n}",
+          "tokenUsage": {
+            "prompt": 246,
+            "completion": 51,
+            "cached": 0,
+            "total": 297,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1142,
+          "finishReason": "stop",
+          "cost": 0.00006749999999999999,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Fri, 16 Oct 2026 02:52:44 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "915",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 0.75,
+        "success": false,
+        "testCase": {
+          "description": "Admin Fee question — must route to correct category",
+          "vars": {
+            "user_input": "I was charged an admin fee twice this month. Can you help?"
+          },
+          "assert": [
+            {
+              "type": "is-json",
+              "metric": "schema_contract"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.hasOwnProperty('answer') &&\n          p.hasOwnProperty('escalate') &&\n          p.hasOwnProperty('confidence') &&\n          p.hasOwnProperty('category');\n} catch(e) { return false; }\n",
+              "metric": "all_required_keys_present"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.escalate === true;\n} catch(e) { return false; }\n",
+              "metric": "business_rule_billing_issue_escalates"
+            },
+            {
+              "type": "javascript",
+              "value": "try {\n  const p = JSON.parse(output);\n  return p.category === 'admin_fee';\n} catch(e) { return false; }\n",
+              "metric": "correct_category_routing"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 4,
+        "tokenUsage": {
+          "prompt": 246,
+          "completion": 51,
+          "cached": 0,
+          "total": 297,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "user_input": "I was charged an admin fee twice this month. Can you help?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Fri, 16 Oct 2026 02:52:44 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "915",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      }
+    ],
+    "stats": {
+      "successes": 2,
+      "failures": 3,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 1230,
+        "completion": 255,
+        "cached": 0,
+        "total": 1485,
+        "numRequests": 5,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "durationMs": 3066,
+      "evaluationDurationMs": 3066
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "Superannuation Chatbot — Contract Test Suite",
+    "prompts": [
+      {
+        "id": "PASS",
+        "label": "v1.0.0 — JSON schema enforced (MUST PASS)",
+        "raw": "file://./contract/contract_prompt_v1.0.0.txt"
+      }
+    ],
+    "providers": [
+      {
+        "id": "openai:gpt-4o-mini",
+        "label": "GPT-4o Mini",
+        "config": {
+          "temperature": 0.1
+        }
+      }
+    ],
+    "tests": [
+      {
+        "description": "Salary Sacrifice — must return valid JSON with all required keys",
+        "vars": {
+          "user_input": "What is salary sacrifice?"
+        },
+        "assert": [
+          {
+            "type": "is-json",
+            "metric": "schema_contract"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.hasOwnProperty('answer') && typeof p.answer === 'string' && p.answer.length > 0;\n} catch(e) { return false; }\n",
+            "metric": "required_key_answer"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return typeof p.confidence === 'number' && p.confidence >= 0 && p.confidence <= 1;\n} catch(e) { return false; }\n",
+            "metric": "required_key_confidence"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return typeof p.escalate === 'boolean';\n} catch(e) { return false; }\n",
+            "metric": "required_key_escalate"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  const valid = ['salary_sacrifice','cancellation', 'admin_fee', 'other'];\n  return valid.includes(p.category);\n} catch(e) { return false; }\n",
+            "metric": "required_key_category"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.answer.includes('30');\n} catch(e) { return false; }\n",
+            "metric": "business_rule_policy_accuracy"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.escalate === false;\n} catch(e) { return false; }\n",
+            "metric": "business_rule_no_unnecessary_escalation"
+          }
+        ]
+      },
+      {
+        "description": "Cancellation — must return valid schema",
+        "vars": {
+          "user_input": "How do I cancel my superannuation?"
+        },
+        "assert": [
+          {
+            "type": "is-json",
+            "metric": "schema_contract"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.category === 'cancellation';\n} catch (e) {\n  return false;\n}\n",
+            "metric": "correct_category_routing"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.category === 'cancellation';\n} catch(e) { return false; }\n",
+            "metric": "correct_category_routing"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.answer.toLowerCase().includes('admin fee') ||\n          p.answer.toLowerCase().includes('period') ||\n          p.answer.toLowerCase().includes('access');\n} catch(e) { return false; }\n",
+            "metric": "business_rule_cancellation_accuracy"
+          }
+        ]
+      },
+      {
+        "description": "Unknown question — must escalate, must NOT speculate",
+        "vars": {
+          "user_input": "Do you offer a discount?"
+        },
+        "assert": [
+          {
+            "type": "is-json",
+            "metric": "schema_contract"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.escalate === true;\n} catch(e) { return false; }\n",
+            "metric": "business_rule_escalate_unknown"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  const answer = p.answer.toLowerCase();\n  return !answer.includes('yes') && !answer.includes('we offer') &&\n          !answer.includes('discount available');\n} catch(e) { return false; }\n",
+            "metric": "business_rule_no_speculation"
+          }
+        ]
+      },
+      {
+        "description": "Angry customer — schema must hold even under pressure",
+        "vars": {
+          "user_input": "This is ridiculous! I want my superannuation money back NOW. Your product is garbage."
+        },
+        "assert": [
+          {
+            "type": "is-json",
+            "metric": "schema_contract"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.hasOwnProperty('answer') && p.hasOwnProperty('escalate') &&\n          p.hasOwnProperty('confidence') && p.hasOwnProperty('category');\n} catch(e) { return false; }\n",
+            "metric": "all_required_keys_present"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.answer.split(' ').length < 200;\n} catch(e) { return false; }\n",
+            "metric": "response_length_limit"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  const a = p.answer.toLowerCase();\n  return !a.includes(\"i can't help\") && !a.includes(\"i cannot help\") &&\n          !a.includes(\"i'm unable\");\n} catch(e) { return false; }\n",
+            "metric": "no_refusal_phrases"
+          }
+        ]
+      },
+      {
+        "description": "Admin Fee question — must route to correct category",
+        "vars": {
+          "user_input": "I was charged an admin fee twice this month. Can you help?"
+        },
+        "assert": [
+          {
+            "type": "is-json",
+            "metric": "schema_contract"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.hasOwnProperty('answer') &&\n          p.hasOwnProperty('escalate') &&\n          p.hasOwnProperty('confidence') &&\n          p.hasOwnProperty('category');\n} catch(e) { return false; }\n",
+            "metric": "all_required_keys_present"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.escalate === true;\n} catch(e) { return false; }\n",
+            "metric": "business_rule_billing_issue_escalates"
+          },
+          {
+            "type": "javascript",
+            "value": "try {\n  const p = JSON.parse(output);\n  return p.category === 'admin_fee';\n} catch(e) { return false; }\n",
+            "metric": "correct_category_routing"
+          }
+        ]
+      }
+    ],
+    "env": {},
+    "outputPath": [
+      "results/contract-results.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {},
+    "basePath": "C:\\Thiyagu\\Learning\\LLM_Testing\\llm-testing\\module-7b\\03-prompt-management"
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.124.0",
+    "nodeVersion": "v24.18.1",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-10-16T02:52:45.604Z",
+    "evaluationCreatedAt": "2026-10-16T02:52:42.172Z"
+  },
+  "vars": [
+    "user_input"
+  ],
+  "runtimeOptions": {
+    "eventSource": "cli",
+    "showProgressBar": true,
+    "repeat": 1,
+    "maxConcurrency": 4,
+    "cache": false
+  }
+}
