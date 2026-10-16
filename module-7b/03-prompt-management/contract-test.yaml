@@ -1,0 +1,249 @@
+# =============================================================================
+# CONTRACT TESTING — Superannuation Chatbot
+#
+# What this tests:
+#   - Response is always valid JSON (schema contract)
+#   - Required keys always present: answer, confidence, escalate, category
+#   - Value types are correct: confidence=float, escalate=boolean
+#   - Business rules: no speculation, no refusals on known topics
+#   - Response length stays within acceptable limits
+#
+# Two prompts compared:
+#   contract_v1.0.0  ← enforces JSON schema → contract PASSES
+#   contract_v1.1.0_BROKEN ← no JSON instruction → contract FAILS
+#
+# Run:  npx promptfoo eval --config contract-test.yaml
+# View: npx promptfoo view
+# =============================================================================
+
+description: "Superannuation Chatbot — Contract Test Suite"
+
+prompts:
+  - id: PASS
+    label: "v1.0.0 — JSON schema enforced (MUST PASS)"
+    raw: file://./contract/contract_prompt_v1.0.0.txt
+
+
+#  - id: FAIL
+#    label: "v1.1.0 BROKEN — no JSON instruction (MUST FAIL)"
+#    raw: file://./contract/contract_prompt_v1.1.0.txt
+
+providers:
+  - id: openai:gpt-4o-mini
+    label: "GPT-4o Mini"
+    config:
+      temperature: 0.1
+
+tests:
+
+  # ── Contract 1: Standard Salary Sacrifice question ─────────────────────────────────
+  - description: "Salary Sacrifice — must return valid JSON with all required keys"
+    vars:
+      user_input: "What is salary sacrifice?"
+    assert:
+
+      # Core contract: must be parseable JSON
+      - type: is-json
+        metric: schema_contract
+
+      # Contract: must have 'answer' key
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.hasOwnProperty('answer') && typeof p.answer === 'string' && p.answer.length > 0;
+          } catch(e) { return false; }
+        metric: required_key_answer
+
+      # Contract: must have 'confidence' key as a number 0-1
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return typeof p.confidence === 'number' && p.confidence >= 0 && p.confidence <= 1;
+          } catch(e) { return false; }
+        metric: required_key_confidence
+
+      # Contract: must have 'escalate' key as boolean
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return typeof p.escalate === 'boolean';
+          } catch(e) { return false; }
+        metric: required_key_escalate
+
+      # Contract: must have 'category' key with valid value
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            const valid = ['salary_sacrifice','cancellation', 'admin_fee', 'other'];
+            return valid.includes(p.category);
+          } catch(e) { return false; }
+        metric: required_key_category
+
+      # Business rule: salary sacrifice answer must mention general information
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.answer.includes('30');
+          } catch(e) { return false; }
+        metric: business_rule_policy_accuracy
+
+      # Business rule: should NOT escalate a known salary sacrifice question
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.escalate === false;
+          } catch(e) { return false; }
+        metric: business_rule_no_unnecessary_escalation
+
+  # ── Contract 2: Cancellation question ────────────────────────────────────
+  - description: "Cancellation — must return valid schema"
+    vars:
+      user_input: "How do I cancel my superannuation?"
+    assert:
+
+      - type: is-json
+        metric: schema_contract
+
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.category === 'cancellation';
+          } catch (e) {
+            return false;
+          }
+        metric: correct_category_routing
+
+      # Contract: category must be 'cancellation' for this question
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.category === 'cancellation';
+          } catch(e) { return false; }
+        metric: correct_category_routing
+
+      # Business rule: must mention admin fee period
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.answer.toLowerCase().includes('admin fee') ||
+                    p.answer.toLowerCase().includes('period') ||
+                    p.answer.toLowerCase().includes('access');
+          } catch(e) { return false; }
+        metric: business_rule_cancellation_accuracy
+
+  # ── Contract 3: Unknown question — must escalate ──────────────────────────
+  - description: "Unknown question — must escalate, must NOT speculate"
+    vars:
+      user_input: "Do you offer a discount?"
+    assert:
+
+      - type: is-json
+        metric: schema_contract
+
+      # Contract: MUST escalate unknown policy questions
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.escalate === true;
+          } catch(e) { return false; }
+        metric: business_rule_escalate_unknown
+
+      # Contract: must NOT speculate or invent a discount
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            const answer = p.answer.toLowerCase();
+            return !answer.includes('yes') && !answer.includes('we offer') &&
+                    !answer.includes('discount available');
+          } catch(e) { return false; }
+        metric: business_rule_no_speculation
+
+  # ── Contract 4: Angry customer — tone + schema ───────────────────────────
+  - description: "Angry customer — schema must hold even under pressure"
+    vars:
+      user_input: "This is ridiculous! I want my superannuation money back NOW. Your product is garbage."
+    assert:
+
+      - type: is-json
+        metric: schema_contract
+
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.hasOwnProperty('answer') && p.hasOwnProperty('escalate') &&
+                    p.hasOwnProperty('confidence') && p.hasOwnProperty('category');
+          } catch(e) { return false; }
+        metric: all_required_keys_present
+
+      # Contract: answer must stay under 200 words
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.answer.split(' ').length < 200;
+          } catch(e) { return false; }
+        metric: response_length_limit
+
+      # Contract: no refusal phrases
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            const a = p.answer.toLowerCase();
+            return !a.includes("i can't help") && !a.includes("i cannot help") &&
+                    !a.includes("i'm unable");
+          } catch(e) { return false; }
+        metric: no_refusal_phrases
+
+  # ── Contract 5: Admin Fee question — correct routing ───────────────────────
+  - description: "Admin Fee question — must route to correct category"
+    vars:
+      user_input: "I was charged an admin fee twice this month. Can you help?"
+    assert:
+
+      - type: is-json
+        metric: schema_contract
+
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.hasOwnProperty('answer') &&
+                    p.hasOwnProperty('escalate') &&
+                    p.hasOwnProperty('confidence') &&
+                    p.hasOwnProperty('category');
+          } catch(e) { return false; }
+        metric: all_required_keys_present
+
+      # A suspected duplicate charge must be escalated
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.escalate === true;
+          } catch(e) { return false; }
+        metric: business_rule_billing_issue_escalates
+
+      # Must be categorised as admin_fee
+      - type: javascript
+        value: |
+          try {
+            const p = JSON.parse(output);
+            return p.category === 'admin_fee';
+          } catch(e) { return false; }
+        metric: correct_category_routing   
+
+# ── OUTPUT ────────────────────────────────────────────────────────────────────
+outputPath: results/contract-results.json
