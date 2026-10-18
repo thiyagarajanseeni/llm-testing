@@ -1,0 +1,1729 @@
+{
+  "evalId": "eval-4gw-2026-10-18T23:45:50",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-10-18T23:45:50.393Z",
+    "prompts": [
+      {
+        "raw": "You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nYour primary audience is Australian superannuation members.\n\nUser: {{question}}",
+        "label": "v1.0 — Released (Baseline): module-7b\\01-assertions\\prompts\\system_prompt_v1.txt: You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nYour primary audience is Australian superannuation members.\n\nUser: {{question}}",
+        "id": "08f0e5b6d630281b2c76a334a29666b114172530064091b85076552b13b900ed",
+        "provider": "GPT-4o Mini",
+        "metrics": {
+          "score": 1.9333333333333331,
+          "testPassCount": 2,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "assertPassCount": 6,
+          "assertFailCount": 0,
+          "totalLatencyMs": 3574,
+          "tokenUsage": {
+            "prompt": 100,
+            "completion": 30,
+            "cached": 0,
+            "total": 130,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 1091,
+              "prompt": 624,
+              "completion": 221,
+              "cached": 246,
+              "numRequests": 4,
+              "completionDetails": {
+                "reasoning": 77,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            },
+            "incurredTokenUsage": {
+              "prompt": 100,
+              "completion": 30,
+              "cached": 0,
+              "total": 130,
+              "numRequests": 2,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              },
+              "assertions": {
+                "total": 845,
+                "prompt": 624,
+                "completion": 221,
+                "cached": 0,
+                "numRequests": 3,
+                "completionDetails": {
+                  "reasoning": 77,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheReadInputTokens": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              }
+            }
+          },
+          "namedScores": {
+            "token_efficiency": 2,
+            "tone_compliance": 2,
+            "relevancy": 1.8
+          },
+          "namedScoresCount": {
+            "token_efficiency": 2,
+            "tone_compliance": 2,
+            "relevancy": 2
+          },
+          "namedScoreWeights": {
+            "token_efficiency": 2,
+            "tone_compliance": 2,
+            "relevancy": 2
+          },
+          "cost": 0.000033
+        }
+      },
+      {
+        "raw": "You are an Australian Superannuation Member Assistant.\n\nYour sole purpose is to provide safe, accurate and understandable\nGENERAL INFORMATION about Australian superannuation.\n\nYour primary responsibility is not to maximize helpfulness.\n\nNever invent information\n\nNever treat member's statement as proof of identity\n\nNever disclose other member's balance or personal details\n\n\nUser: {{question}}",
+        "label": "v2.0 — Candidate: module-7b\\01-assertions\\prompts\\system_prompt_v2.txt: You are an Australian Superannuation Member Assistant.\n\nYour sole purpose is to provide safe, accurate and understandable\nGENERAL INFORMATION about Australian superannuation.\n\nYour primary responsibility is not to maximize helpfulness.\n\nNever invent information\n\nNever treat member's statement as proof of identity\n\nNever disclose other member's balance or personal details\n\n\nUser: {{question}}",
+        "id": "23580287677a60ba4bced5a1e57ed7fb2c4f6c4ba9d30138f5e3d30fc2b68b52",
+        "provider": "GPT-4o Mini",
+        "metrics": {
+          "score": 1.8900000000000001,
+          "testPassCount": 1,
+          "testFailCount": 1,
+          "testErrorCount": 0,
+          "assertPassCount": 5,
+          "assertFailCount": 1,
+          "totalLatencyMs": 3474,
+          "tokenUsage": {
+            "prompt": 148,
+            "completion": 34,
+            "cached": 0,
+            "total": 182,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 1147,
+              "prompt": 839,
+              "completion": 308,
+              "cached": 0,
+              "numRequests": 4,
+              "completionDetails": {
+                "reasoning": 144,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {
+            "token_efficiency": 2,
+            "relevancy": 1.67,
+            "tone_compliance": 2
+          },
+          "namedScoresCount": {
+            "token_efficiency": 2,
+            "relevancy": 2,
+            "tone_compliance": 2
+          },
+          "namedScoreWeights": {
+            "token_efficiency": 2,
+            "relevancy": 2,
+            "tone_compliance": 2
+          },
+          "cost": 0.00004259999999999999
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0.000021299999999999996,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "token_efficiency": 1,
+            "relevancy": 1,
+            "tone_compliance": 1
+          },
+          "namedScoreWeights": {
+            "token_efficiency": 1,
+            "relevancy": 1,
+            "tone_compliance": 1
+          },
+          "tokensUsed": {
+            "total": 530,
+            "prompt": 420,
+            "completion": 110,
+            "cached": 0,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 25,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "Score 0-1: Response is helpful, accurate, and appropriately toned",
+                "threshold": 0.7,
+                "metric": "relevancy"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is polite, appropriately toned, and invites the user to ask about Australian superannuation. It makes no inaccurate claims.",
+              "tokensUsed": {
+                "total": 287,
+                "prompt": 211,
+                "completion": 76,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 25,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Sun, 18 Oct 2026 23:45:53 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "1322",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nHello! How can I assist you with your questions about Australian superannuation today?\\n</Output>\\n<Rubric>\\nScore 0-1: Response is helpful, accurate, and appropriately toned\\n</Rubric>\"}]"
+              }
+            },
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "Score 0-1: Tone is appropriate — professional yet human",
+                "threshold": 0.7,
+                "metric": "tone_compliance"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The greeting is friendly and professional, and the offer to help sounds natural.",
+              "tokensUsed": {
+                "total": 243,
+                "prompt": 209,
+                "completion": 34,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Sun, 18 Oct 2026 23:45:53 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "1119",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nHello! How can I assist you with your questions about Australian superannuation today?\\n</Output>\\n<Rubric>\\nScore 0-1: Tone is appropriate — professional yet human\\n</Rubric>\"}]"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output.split(' ').length < 200",
+                "metric": "token_efficiency"
+              }
+            }
+          ]
+        },
+        "id": "8430bef0-1925-4357-bd43-8d7686eb0cc4",
+        "latencyMs": 1737,
+        "namedScores": {
+          "token_efficiency": 1,
+          "relevancy": 1,
+          "tone_compliance": 1
+        },
+        "prompt": {
+          "raw": "You are an Australian Superannuation Member Assistant.\n\nYour sole purpose is to provide safe, accurate and understandable\nGENERAL INFORMATION about Australian superannuation.\n\nYour primary responsibility is not to maximize helpfulness.\n\nNever invent information\n\nNever treat member's statement as proof of identity\n\nNever disclose other member's balance or personal details\n\n\nUser: ",
+          "label": "v2.0 — Candidate: module-7b\\01-assertions\\prompts\\system_prompt_v2.txt: You are an Australian Superannuation Member Assistant.\n\nYour sole purpose is to provide safe, accurate and understandable\nGENERAL INFORMATION about Australian superannuation.\n\nYour primary responsibility is not to maximize helpfulness.\n\nNever invent information\n\nNever treat member's statement as proof of identity\n\nNever disclose other member's balance or personal details\n\n\nUser: {{question}}",
+          "config": {}
+        },
+        "promptId": "23580287677a60ba4bced5a1e57ed7fb2c4f6c4ba9d30138f5e3d30fc2b68b52",
+        "promptIdx": 1,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": "GPT-4o Mini"
+        },
+        "response": {
+          "output": "Hello! How can I assist you with your questions about Australian superannuation today?",
+          "tokenUsage": {
+            "prompt": 74,
+            "completion": 17,
+            "cached": 0,
+            "total": 91,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1737,
+          "finishReason": "stop",
+          "cost": 0.000021299999999999996,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Sun, 18 Oct 2026 23:45:51 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "515",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Can I Cancel My Superannuation Contribution",
+          "vars": {
+            "user_input": "I want to cancel my superannuation contribution"
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "Score 0-1: Response is helpful, accurate, and appropriately toned",
+              "threshold": 0.7,
+              "metric": "relevancy"
+            },
+            {
+              "type": "llm-rubric",
+              "value": "Score 0-1: Tone is appropriate — professional yet human",
+              "threshold": 0.7,
+              "metric": "tone_compliance"
+            },
+            {
+              "type": "javascript",
+              "value": "output.split(' ').length < 200",
+              "metric": "token_efficiency"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "tokenUsage": {
+          "prompt": 74,
+          "completion": 17,
+          "cached": 0,
+          "total": 91,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 530,
+            "prompt": 420,
+            "completion": 110,
+            "cached": 0,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 25,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "user_input": "I want to cancel my superannuation contribution"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Sun, 18 Oct 2026 23:45:51 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "515",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0.0000165,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "token_efficiency": 1,
+            "tone_compliance": 1,
+            "relevancy": 1
+          },
+          "namedScoreWeights": {
+            "token_efficiency": 1,
+            "tone_compliance": 1,
+            "relevancy": 1
+          },
+          "tokensUsed": {
+            "total": 533,
+            "prompt": 416,
+            "completion": 117,
+            "cached": 0,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 27,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "Score 0-1: Response is helpful, accurate, and appropriately toned",
+                "threshold": 0.7,
+                "metric": "relevancy"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response is polite, relevant to superannuation, and invites the user to ask a question. It makes no inaccurate claims.",
+              "tokensUsed": {
+                "total": 287,
+                "prompt": 209,
+                "completion": 78,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 27,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Sun, 18 Oct 2026 23:45:55 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "1416",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nHello! How can I assist you with your superannuation questions today?\\n</Output>\\n<Rubric>\\nScore 0-1: Response is helpful, accurate, and appropriately toned\\n</Rubric>\"}]"
+              }
+            },
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "Score 0-1: Tone is appropriate — professional yet human",
+                "threshold": 0.7,
+                "metric": "tone_compliance"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The greeting is friendly and professional, and the question invites the user to explain what help they need.",
+              "tokensUsed": {
+                "total": 246,
+                "prompt": 207,
+                "completion": 39,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Sun, 18 Oct 2026 23:45:55 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "1300",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nHello! How can I assist you with your superannuation questions today?\\n</Output>\\n<Rubric>\\nScore 0-1: Tone is appropriate — professional yet human\\n</Rubric>\"}]"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output.split(' ').length < 200",
+                "metric": "token_efficiency"
+              }
+            }
+          ]
+        },
+        "id": "f05b5670-2eaf-41e1-9f2c-fda71873ac72",
+        "latencyMs": 1787,
+        "namedScores": {
+          "token_efficiency": 1,
+          "tone_compliance": 1,
+          "relevancy": 1
+        },
+        "prompt": {
+          "raw": "You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nYour primary audience is Australian superannuation members.\n\nUser: ",
+          "label": "v1.0 — Released (Baseline): module-7b\\01-assertions\\prompts\\system_prompt_v1.txt: You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nYour primary audience is Australian superannuation members.\n\nUser: {{question}}",
+          "config": {}
+        },
+        "promptId": "08f0e5b6d630281b2c76a334a29666b114172530064091b85076552b13b900ed",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": "GPT-4o Mini"
+        },
+        "response": {
+          "output": "Hello! How can I assist you with your superannuation questions today?",
+          "tokenUsage": {
+            "prompt": 50,
+            "completion": 15,
+            "cached": 0,
+            "total": 65,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1787,
+          "finishReason": "stop",
+          "cost": 0.0000165,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Sun, 18 Oct 2026 23:45:51 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "412",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Can I Cancel My Superannuation Contribution",
+          "vars": {
+            "user_input": "I want to cancel my superannuation contribution"
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "Score 0-1: Response is helpful, accurate, and appropriately toned",
+              "threshold": 0.7,
+              "metric": "relevancy"
+            },
+            {
+              "type": "llm-rubric",
+              "value": "Score 0-1: Tone is appropriate — professional yet human",
+              "threshold": 0.7,
+              "metric": "tone_compliance"
+            },
+            {
+              "type": "javascript",
+              "value": "output.split(' ').length < 200",
+              "metric": "token_efficiency"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "tokenUsage": {
+          "prompt": 50,
+          "completion": 15,
+          "cached": 0,
+          "total": 65,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 533,
+            "prompt": 416,
+            "completion": 117,
+            "cached": 0,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 27,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "user_input": "I want to cancel my superannuation contribution"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Sun, 18 Oct 2026 23:45:51 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "412",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0.000021299999999999996,
+        "error": "The response is professional and offers help, but it does not express empathy or provide a specific solution.",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.89,
+          "reason": "The response is professional and offers help, but it does not express empathy or provide a specific solution.",
+          "namedScores": {
+            "token_efficiency": 1,
+            "tone_compliance": 1,
+            "relevancy": 0.67
+          },
+          "namedScoreWeights": {
+            "token_efficiency": 1,
+            "tone_compliance": 1,
+            "relevancy": 1
+          },
+          "tokensUsed": {
+            "total": 617,
+            "prompt": 419,
+            "completion": 198,
+            "cached": 0,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 119,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "Score 0-1: Empathetic, offers solution, professional",
+                "threshold": 0.7,
+                "metric": "relevancy"
+              },
+              "pass": false,
+              "score": 0.67,
+              "reason": "The response is professional and offers help, but it does not express empathy or provide a specific solution.",
+              "tokensUsed": {
+                "total": 374,
+                "prompt": 210,
+                "completion": 164,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 119,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Sun, 18 Oct 2026 23:45:55 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "2538",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nHello! How can I assist you with your questions about Australian superannuation today?\\n</Output>\\n<Rubric>\\nScore 0-1: Empathetic, offers solution, professional\\n</Rubric>\"}]"
+              }
+            },
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "Score 0-1: Tone is appropriate — professional yet human",
+                "threshold": 0.7,
+                "metric": "tone_compliance"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The greeting is friendly and professional, and the offer to help sounds natural.",
+              "tokensUsed": {
+                "total": 243,
+                "prompt": 209,
+                "completion": 34,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Sun, 18 Oct 2026 23:45:53 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "1119",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nHello! How can I assist you with your questions about Australian superannuation today?\\n</Output>\\n<Rubric>\\nScore 0-1: Tone is appropriate — professional yet human\\n</Rubric>\"}]"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output.split(' ').length < 200",
+                "metric": "token_efficiency"
+              }
+            }
+          ]
+        },
+        "id": "5dfa25f2-c44d-4b2f-8ae2-427e65210dc0",
+        "latencyMs": 1737,
+        "namedScores": {
+          "token_efficiency": 1,
+          "tone_compliance": 1,
+          "relevancy": 0.67
+        },
+        "prompt": {
+          "raw": "You are an Australian Superannuation Member Assistant.\n\nYour sole purpose is to provide safe, accurate and understandable\nGENERAL INFORMATION about Australian superannuation.\n\nYour primary responsibility is not to maximize helpfulness.\n\nNever invent information\n\nNever treat member's statement as proof of identity\n\nNever disclose other member's balance or personal details\n\n\nUser: ",
+          "label": "v2.0 — Candidate: module-7b\\01-assertions\\prompts\\system_prompt_v2.txt: You are an Australian Superannuation Member Assistant.\n\nYour sole purpose is to provide safe, accurate and understandable\nGENERAL INFORMATION about Australian superannuation.\n\nYour primary responsibility is not to maximize helpfulness.\n\nNever invent information\n\nNever treat member's statement as proof of identity\n\nNever disclose other member's balance or personal details\n\n\nUser: {{question}}",
+          "config": {}
+        },
+        "promptId": "23580287677a60ba4bced5a1e57ed7fb2c4f6c4ba9d30138f5e3d30fc2b68b52",
+        "promptIdx": 1,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": "GPT-4o Mini"
+        },
+        "response": {
+          "output": "Hello! How can I assist you with your questions about Australian superannuation today?",
+          "tokenUsage": {
+            "prompt": 74,
+            "completion": 17,
+            "cached": 0,
+            "total": 91,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1737,
+          "finishReason": "stop",
+          "cost": 0.000021299999999999996,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Sun, 18 Oct 2026 23:45:51 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "515",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 0.89,
+        "success": false,
+        "testCase": {
+          "description": "Superannuation contribution refund inquiry",
+          "vars": {
+            "user_input": "I want to request a refund for my superannuation contribution"
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "Score 0-1: Empathetic, offers solution, professional",
+              "threshold": 0.7,
+              "metric": "relevancy"
+            },
+            {
+              "type": "llm-rubric",
+              "value": "Score 0-1: Tone is appropriate — professional yet human",
+              "threshold": 0.7,
+              "metric": "tone_compliance"
+            },
+            {
+              "type": "javascript",
+              "value": "output.split(' ').length < 200",
+              "metric": "token_efficiency"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "tokenUsage": {
+          "prompt": 74,
+          "completion": 17,
+          "cached": 0,
+          "total": 91,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 617,
+            "prompt": 419,
+            "completion": 198,
+            "cached": 0,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 119,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "user_input": "I want to request a refund for my superannuation contribution"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Sun, 18 Oct 2026 23:45:51 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "515",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0.0000165,
+        "gradingResult": {
+          "pass": true,
+          "score": 0.9333333333333332,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "token_efficiency": 1,
+            "tone_compliance": 1,
+            "relevancy": 0.8
+          },
+          "namedScoreWeights": {
+            "token_efficiency": 1,
+            "tone_compliance": 1,
+            "relevancy": 1
+          },
+          "tokensUsed": {
+            "total": 558,
+            "prompt": 208,
+            "completion": 104,
+            "cached": 246,
+            "numRequests": 2,
+            "incurredTokenUsage": {
+              "total": 312,
+              "prompt": 208,
+              "completion": 104,
+              "cached": 0,
+              "numRequests": 1,
+              "completionDetails": {
+                "reasoning": 50,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            },
+            "completionDetails": {
+              "reasoning": 50,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "Score 0-1: Empathetic, offers solution, professional",
+                "threshold": 0.7,
+                "metric": "relevancy"
+              },
+              "pass": true,
+              "score": 0.8,
+              "reason": "The response is friendly and professional, and it offers help with superannuation questions. It does not explicitly express empathy or offer a specific solution.",
+              "tokensUsed": {
+                "total": 312,
+                "prompt": 208,
+                "completion": 104,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "reasoning": 50,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0,
+                  "cacheCreationInputTokens": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Sun, 18 Oct 2026 23:45:56 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "1743",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nHello! How can I assist you with your superannuation questions today?\\n</Output>\\n<Rubric>\\nScore 0-1: Empathetic, offers solution, professional\\n</Rubric>\"}]"
+              }
+            },
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "Score 0-1: Tone is appropriate — professional yet human",
+                "threshold": 0.7,
+                "metric": "tone_compliance"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The greeting is friendly and professional, and the question invites the user to explain what help they need.",
+              "tokensUsed": {
+                "total": 246,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 246,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              },
+              "metadata": {
+                "http": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "headers": {
+                    "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                    "alt-svc": "h3=\":443\"; ma=86400",
+                    "cf-cache-status": "[REDACTED]",
+                    "cf-ray": "[REDACTED]",
+                    "connection": "keep-alive",
+                    "content-type": "application/json",
+                    "date": "Sun, 18 Oct 2026 23:45:55 GMT",
+                    "openai-organization": "[REDACTED]",
+                    "openai-processing-ms": "1300",
+                    "openai-project": "[REDACTED]",
+                    "openai-version": "[REDACTED]",
+                    "server": "cloudflare",
+                    "set-cookie": "[REDACTED]",
+                    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                    "transfer-encoding": "chunked",
+                    "x-content-type-options": "nosniff",
+                    "x-openai-proxy-wasm": "[REDACTED]",
+                    "x-ratelimit-limit-requests": "[REDACTED]",
+                    "x-ratelimit-limit-tokens": "[REDACTED]",
+                    "x-ratelimit-remaining-requests": "[REDACTED]",
+                    "x-ratelimit-remaining-tokens": "[REDACTED]",
+                    "x-ratelimit-reset-requests": "[REDACTED]",
+                    "x-ratelimit-reset-tokens": "[REDACTED]",
+                    "x-request-id": "[REDACTED]"
+                  }
+                },
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nHello! How can I assist you with your superannuation questions today?\\n</Output>\\n<Rubric>\\nScore 0-1: Tone is appropriate — professional yet human\\n</Rubric>\"}]",
+                "cachedResponse": true
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output.split(' ').length < 200",
+                "metric": "token_efficiency"
+              }
+            }
+          ]
+        },
+        "id": "52366bdd-36a9-4315-988d-5720cbf52ee2",
+        "latencyMs": 1787,
+        "namedScores": {
+          "token_efficiency": 1,
+          "tone_compliance": 1,
+          "relevancy": 0.8
+        },
+        "prompt": {
+          "raw": "You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nYour primary audience is Australian superannuation members.\n\nUser: ",
+          "label": "v1.0 — Released (Baseline): module-7b\\01-assertions\\prompts\\system_prompt_v1.txt: You are an Australian Superannuation Member Assistant.\n\nYour purpose is to provide accurate, clear, safe and helpful general information about Australian superannuation.\n\nYour primary audience is Australian superannuation members.\n\nUser: {{question}}",
+          "config": {}
+        },
+        "promptId": "08f0e5b6d630281b2c76a334a29666b114172530064091b85076552b13b900ed",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openai:gpt-4o-mini",
+          "label": "GPT-4o Mini"
+        },
+        "response": {
+          "output": "Hello! How can I assist you with your superannuation questions today?",
+          "tokenUsage": {
+            "prompt": 50,
+            "completion": 15,
+            "cached": 0,
+            "total": 65,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "cached": false,
+          "latencyMs": 1787,
+          "finishReason": "stop",
+          "cost": 0.0000165,
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cf-cache-status": "[REDACTED]",
+                "cf-ray": "[REDACTED]",
+                "connection": "keep-alive",
+                "content-type": "application/json",
+                "date": "Sun, 18 Oct 2026 23:45:51 GMT",
+                "openai-organization": "[REDACTED]",
+                "openai-processing-ms": "412",
+                "openai-project": "[REDACTED]",
+                "openai-version": "[REDACTED]",
+                "server": "cloudflare",
+                "set-cookie": "[REDACTED]",
+                "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                "transfer-encoding": "chunked",
+                "x-content-type-options": "nosniff",
+                "x-openai-proxy-wasm": "[REDACTED]",
+                "x-ratelimit-limit-requests": "[REDACTED]",
+                "x-ratelimit-limit-tokens": "[REDACTED]",
+                "x-ratelimit-remaining-requests": "[REDACTED]",
+                "x-ratelimit-remaining-tokens": "[REDACTED]",
+                "x-ratelimit-reset-requests": "[REDACTED]",
+                "x-ratelimit-reset-tokens": "[REDACTED]",
+                "x-request-id": "[REDACTED]"
+              }
+            }
+          }
+        },
+        "score": 0.9333333333333332,
+        "success": true,
+        "testCase": {
+          "description": "Superannuation contribution refund inquiry",
+          "vars": {
+            "user_input": "I want to request a refund for my superannuation contribution"
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "Score 0-1: Empathetic, offers solution, professional",
+              "threshold": 0.7,
+              "metric": "relevancy"
+            },
+            {
+              "type": "llm-rubric",
+              "value": "Score 0-1: Tone is appropriate — professional yet human",
+              "threshold": 0.7,
+              "metric": "tone_compliance"
+            },
+            {
+              "type": "javascript",
+              "value": "output.split(' ').length < 200",
+              "metric": "token_efficiency"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "tokenUsage": {
+          "prompt": 50,
+          "completion": 15,
+          "cached": 0,
+          "total": 65,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 558,
+            "prompt": 208,
+            "completion": 104,
+            "cached": 246,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 50,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "incurredTokenUsage": {
+            "prompt": 50,
+            "completion": 15,
+            "cached": 0,
+            "total": 65,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 312,
+              "prompt": 208,
+              "completion": 104,
+              "cached": 0,
+              "numRequests": 1,
+              "completionDetails": {
+                "reasoning": 50,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          }
+        },
+        "vars": {
+          "user_input": "I want to request a refund for my superannuation contribution"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cf-cache-status": "[REDACTED]",
+              "cf-ray": "[REDACTED]",
+              "connection": "keep-alive",
+              "content-type": "application/json",
+              "date": "Sun, 18 Oct 2026 23:45:51 GMT",
+              "openai-organization": "[REDACTED]",
+              "openai-processing-ms": "412",
+              "openai-project": "[REDACTED]",
+              "openai-version": "[REDACTED]",
+              "server": "cloudflare",
+              "set-cookie": "[REDACTED]",
+              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff",
+              "x-openai-proxy-wasm": "[REDACTED]",
+              "x-ratelimit-limit-requests": "[REDACTED]",
+              "x-ratelimit-limit-tokens": "[REDACTED]",
+              "x-ratelimit-remaining-requests": "[REDACTED]",
+              "x-ratelimit-remaining-tokens": "[REDACTED]",
+              "x-ratelimit-reset-requests": "[REDACTED]",
+              "x-ratelimit-reset-tokens": "[REDACTED]",
+              "x-request-id": "[REDACTED]"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 3,
+      "failures": 1,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 248,
+        "completion": 64,
+        "cached": 0,
+        "total": 312,
+        "numRequests": 4,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 2238,
+          "prompt": 1463,
+          "completion": 529,
+          "cached": 246,
+          "numRequests": 8,
+          "completionDetails": {
+            "reasoning": 221,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        },
+        "incurredTokenUsage": {
+          "prompt": 248,
+          "completion": 64,
+          "cached": 0,
+          "total": 312,
+          "numRequests": 4,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 1992,
+            "prompt": 1463,
+            "completion": 529,
+            "cached": 0,
+            "numRequests": 7,
+            "completionDetails": {
+              "reasoning": 221,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        }
+      },
+      "durationMs": 6476,
+      "evaluationDurationMs": 6476
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "Superannuation Chat Bot — Prompt Regression Test",
+    "prompts": [
+      {
+        "id": "file://C:\\Thiyagu\\Learning\\LLM_Testing\\llm-testing\\module-7b\\01-assertions\\prompts\\system_prompt_v1.txt",
+        "label": "v1.0 — Released (Baseline)"
+      },
+      {
+        "id": "file://C:\\Thiyagu\\Learning\\LLM_Testing\\llm-testing\\module-7b\\01-assertions\\prompts\\system_prompt_v2.txt",
+        "label": "v2.0 — Candidate"
+      }
+    ],
+    "providers": [
+      {
+        "id": "openai:gpt-4o-mini",
+        "label": "GPT-4o Mini",
+        "config": {
+          "temperature": 0.1
+        }
+      }
+    ],
+    "tests": [
+      {
+        "description": "Can I Cancel My Superannuation Contribution",
+        "vars": {
+          "user_input": "I want to cancel my superannuation contribution"
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "value": "Score 0-1: Response is helpful, accurate, and appropriately toned",
+            "threshold": 0.7,
+            "metric": "relevancy"
+          },
+          {
+            "type": "llm-rubric",
+            "value": "Score 0-1: Tone is appropriate — professional yet human",
+            "threshold": 0.7,
+            "metric": "tone_compliance"
+          },
+          {
+            "type": "javascript",
+            "value": "output.split(' ').length < 200",
+            "metric": "token_efficiency"
+          }
+        ]
+      },
+      {
+        "description": "Superannuation contribution refund inquiry",
+        "vars": {
+          "user_input": "I want to request a refund for my superannuation contribution"
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "value": "Score 0-1: Empathetic, offers solution, professional",
+            "threshold": 0.7,
+            "metric": "relevancy"
+          },
+          {
+            "type": "llm-rubric",
+            "value": "Score 0-1: Tone is appropriate — professional yet human",
+            "threshold": 0.7,
+            "metric": "tone_compliance"
+          },
+          {
+            "type": "javascript",
+            "value": "output.split(' ').length < 200",
+            "metric": "token_efficiency"
+          }
+        ]
+      }
+    ],
+    "env": {},
+    "outputPath": [
+      "results/ab-results.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {},
+    "basePath": "C:\\Thiyagu\\Learning\\LLM_Testing\\llm-testing\\module-7b\\03-prompt-management"
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.124.0",
+    "nodeVersion": "v24.18.1",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-10-18T23:45:57.204Z",
+    "evaluationCreatedAt": "2026-10-18T23:45:50.393Z"
+  },
+  "vars": [
+    "user_input"
+  ],
+  "runtimeOptions": {
+    "eventSource": "cli",
+    "showProgressBar": true,
+    "repeat": 1,
+    "maxConcurrency": 4,
+    "cache": true
+  }
+}
