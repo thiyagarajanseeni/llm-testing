@@ -1,0 +1,79 @@
+# =============================================================================
+# REGRESSION LAB — Session 3 Hour 4
+# Goal: Detect a prompt change that breaks behavior before it hits production
+#
+# STEP 1 (Baseline):    Keep both prompts as-is — scores should be high
+# STEP 2 (Break it):    Swap candidate system file to v1.1.0_system_BROKEN.txt
+# STEP 3 (Observe):     Re-run — watch the score collapse on the broken version
+# STEP 4 (Restore):     Swap back to v1.1.0_system.txt (the fixed version)
+# STEP 5 (Tag it):      git tag -a v1.1.0 -m "Prompt release v1.1.0"
+#
+# Run:  npx promptfoo eval --config promptfoo-regression.yaml
+# View: npx promptfoo view
+# =============================================================================
+
+description: "Superannuation Chat Bot — Prompt Regression Test"
+
+# ── PROMPTS ──────────────────────────────────────────────────────────────────
+# {{user_input}} is injected from each test case's vars section.
+# The system prompt is loaded from file via config.system.
+#
+# During the lab, swap the candidate system file between:
+#   module-7b/03-prompt-management/prompts/v1.1.0_system_BROKEN.txt   ← to see regression
+#   module-7b/03-prompt-management/prompts/v1.1.0_system.txt          ← to see recovery
+prompts:
+  - id: file://../01-assertions/prompts/system_prompt_v1.txt
+    label: v1.0 — Released (Baseline)
+  - id: file://../01-assertions/prompts/system_prompt_v2.txt
+    label: v2.0 — Candidate
+
+# ── PROVIDERS ────────────────────────────────────────────────────────────────
+providers:
+  - id: openai:gpt-4o-mini
+    label: "GPT-4o Mini"
+    config:
+      temperature: 0.1    # Low temperature = more deterministic = stable scores
+
+# ── TEST CASES ───────────────────────────────────────────────────────────────
+tests:
+
+  # ── Test 1: Basic policy question ─────────────────────────────────────────
+  - description: "Can I Cancel My Superannuation Contribution"
+    vars:
+      user_input: "I want to cancel my superannuation contribution"
+    assert:
+      - type: llm-rubric
+        value: "Score 0-1: Response is helpful, accurate, and appropriately toned"
+        threshold: 0.7
+        metric: relevancy
+
+      - type: llm-rubric
+        value: "Score 0-1: Tone is appropriate — professional yet human"
+        threshold: 0.7
+        metric: tone_compliance    # ← shows as its own column
+
+      - type: javascript
+        value: output.split(' ').length < 200
+        metric: token_efficiency   # ← shows as its own column
+
+
+  - description: "Superannuation contribution refund inquiry"
+    vars:
+      user_input: "I want to request a refund for my superannuation contribution"
+    assert:
+      - type: llm-rubric
+        value: "Score 0-1: Empathetic, offers solution, professional"
+        threshold: 0.7
+        metric: relevancy
+
+      - type: llm-rubric
+        value: "Score 0-1: Tone is appropriate — professional yet human"
+        threshold: 0.7
+        metric: tone_compliance    # ← shows as its own column
+
+      - type: javascript
+        value: output.split(' ').length < 200
+        metric: token_efficiency   # ← shows as its own column
+
+# ── OUTPUT ───────────────────────────────────────────────────────────────────
+outputPath: results/ab-results.json
